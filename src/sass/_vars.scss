@@ -1,16 +1,25 @@
-// SITE
-
+// Site
 $site-width:  960px;
 $site-gutter: 7.5%;
 
-// BREAKPOINTS
-
+// Breakpoints
 $tablet:  768px;
 $desktop: 1024px;
 
-// FONTS
+// Fonts
+$sans: 'Heebo', sans-serif;
 
-// $sans: ;
-// $serif: ;
+// Colors
+$white: #fff;
+$aqua: hsla(161%, 100%, 72%, 1);
+$purple: hsla(237%, 54%, 60%, 1);
+$black: hsla(0%, 0%, 18%, 1);
+$blue-dark: hsla(216%, 39%, 28%, 1);
+$blue: hsla(219%, 29%, 29%, 1);
 
-// COLORS
+/* RGB */
+// $color1: rgba(110, 255, 210, 1);
+// $color2: rgba(99, 105, 209, 1);
+// $color3: rgba(47, 47, 47, 1);
+// $color4: rgba(43, 65, 98, 1);
+// $color5: rgba(52, 67, 94, 1);

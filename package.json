@@ -31,9 +31,14 @@
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "*",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "*",
     "rollup-plugin-node-resolve": "*",
     "rollup-plugin-replace": "^1.1.1",
     "rollup-plugin-uglify": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sql.js": "^0.4.0"
+  }
 }

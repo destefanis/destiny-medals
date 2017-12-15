@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,500,700');
 @import "mixins";
 @import "reset";
 
-// PARTIALS
-
+// Partials
 @import "vars";
 @import "base";
 @import "z-index";
 
-// COMPONENTS
-
-// SECTIONS
+// Components
+@import "components/_form";
+@import "components/_nav";
