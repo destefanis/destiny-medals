@@ -1,5 +1,9 @@
-// Import React.
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 const api_key = "b8f2f9674ea24761bfe8f0a49a84d3a3";
 const host = 'https://www.bungie.net/Platform/Destiny2/';
@@ -80,14 +84,44 @@ class PlayerInfoForm extends React.Component {
 
   render() {
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
-        <PlatformSelect />
-        <input type="text" placeholder="YourName#1377" value={this.state.playerName} onChange={this.handleChange} />
+      <Router>
         <div>
-          <button type="submit">Search</button>
+          <form className="form" onSubmit={this.handleSubmit}>
+            <PlatformSelect />
+            <input type="text" placeholder="YourName#1377" value={this.state.playerName} onChange={this.handleChange} />
+            <div>
+              // This is preventing it from submitting.
+              // Look into calling this link from a method on success and
+              // passing the prop with it.
+              <Link to="/character">
+                <button type="submit">Search</button>
+              </Link>
+            </div>
+          </form>
+
+          <Route path="/character" component={CharacterSelect}/>
         </div>
-      </form>
+      </Router>
     );
+  }
+}
+
+class CharacterSelect extends React.Component {
+  constructor() {
+    super();
+  }
+
+  render () {
+    return (
+      <div>
+        <label className="form-label form-label--transparent">
+          Character
+        </label>
+        <ul>
+          <li>Test</li>
+        </ul>
+      </div>
+    )
   }
 }
 
