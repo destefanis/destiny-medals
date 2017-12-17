@@ -22,7 +22,7 @@ class CharacterSelectList extends React.Component {
   }
 }
 
-export default CharacterSelect;
+export default CharacterSelectList;
 
 // for (let characterID of data.Response.profile.data.characterIds) {
 //   console.log(characterID);

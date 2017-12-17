@@ -51,20 +51,17 @@ export class App extends React.Component {
         <nav className="nav">
           <h1 className="h1">
             Destiny Medals
-            {this.state.membershipId}
-            {this.state.userName}
-            {this.state.characterIds}
           </h1>
         </nav>
         <Router>
           <section className="main">
-            
-            <PlayerInfoForm
-              onCharacterListChange={this.handleCharacterListChange}
-              onMembershipChange={this.handleMembershipChange}
-              onHandleInputChange={this.handleInputChange}
-            />
             <Switch>
+              <Route exact path="/" render={ () => 
+                <PlayerInfoForm 
+                  onCharacterListChange={this.handleCharacterListChange}
+                  onMembershipChange={this.handleMembershipChange}
+                  onHandleInputChange={this.handleInputChange}  /> 
+                } />
               <Route path="/character" render={ () => <CharacterSelectList /> } />
             </Switch>
           </section>
