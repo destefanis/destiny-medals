@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  Route,
-  withRouter,
-  Link
-} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import PlatformSelect from './PlatformSelect';
 
@@ -45,15 +41,16 @@ class PlayerInfoForm extends React.Component {
     let playerName = encodeURIComponent(this.state.value);
     let endpoint = host + 'SearchDestinyPlayer/4/' + playerName + '/';
     let request = new Request(endpoint, requestHeaders);
+    let membershipId;
 
     // Fetch the Bungie.net MembershipID for the user.
     fetch(request)
       .then(response => response.json())
       .then(data => {
 
-        let membershipId = data.Response[0].membershipId;
+        membershipId = data.Response[0].membershipId;
+        // Update the parent state value.
         this.props.onMembershipChange(membershipId);
-
         // Update the endpoint to request the users profile.
         endpoint = host + '4/Profile/' + membershipId + '/?components=100';
         let userRequest = new Request(endpoint, requestHeaders);
@@ -62,11 +59,21 @@ class PlayerInfoForm extends React.Component {
       })
       .then(response => response.json())
       .then(data => {
-
+  
         let characterIds = data.Response.profile.data.characterIds;
-        this.props.onCharacterListChange(characterIds);
 
-        // @todo update route to pass state info to my characterSelect component
+        // Request character info for each character.
+        for (let characterId of data.Response.profile.data.characterIds) {
+          endpoint = host + '4/Profile/' + membershipId + '/Character/' + characterId + '/?components=200';
+          let characterRequest = new Request(endpoint, requestHeaders);
+
+          fetch(characterRequest)
+            .then(response => response.json())
+            .then(data => {
+              this.props.onCharacterListChange(data.Response.character.data);
+            })
+        }
+
         this.props.history.push('/character');
       })
       .catch(function(error) { 

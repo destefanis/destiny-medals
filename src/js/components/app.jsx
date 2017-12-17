@@ -10,6 +10,17 @@ import {
 import PlayerInfoForm from './PlayerInfoForm';
 import CharacterSelectList from './CharacterSelectList';
 
+// @todo make into static/constants
+const api_key = "b8f2f9674ea24761bfe8f0a49a84d3a3";
+const host = 'https://www.bungie.net/Platform/Destiny2/';
+const requestHeaders = {
+  method: 'GET',
+  mode: 'cors',
+  headers: new Headers({
+    "X-API-Key": api_key
+  })
+};
+
 export class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +28,7 @@ export class App extends React.Component {
       userName: 'test',
       userPlatform: '4',
       membershipId: '1',
-      characterIds: [],
+      characterData: [],
       characterId: '',
     };
 
@@ -26,7 +37,7 @@ export class App extends React.Component {
     this.handleCharacterListChange = this.handleCharacterListChange.bind(this);
   }
 
-  // Update state from child callback.
+  // Callback methods
   handleInputChange(userName) {
     this.setState({
       userName: userName
@@ -39,10 +50,13 @@ export class App extends React.Component {
     });
   }
 
-  handleCharacterListChange(characterIds) {
+  handleCharacterListChange(characterData) {
+
     this.setState({
-      characterIds: characterIds
+      characterData: [...this.state.characterData, characterData]
     });
+
+    console.log(this.state.characterData);
   }
 
   render () {
@@ -53,21 +67,27 @@ export class App extends React.Component {
             Destiny Medals
           </h1>
         </nav>
+
         <Router>
           <section className="main">
+
             <Switch>
               <Route exact path="/" render={ () => 
                 <PlayerInfoForm 
                   onCharacterListChange={this.handleCharacterListChange}
                   onMembershipChange={this.handleMembershipChange}
-                  onHandleInputChange={this.handleInputChange}  /> 
-                } />
-              <Route path="/character" render={ () => <CharacterSelectList /> } />
+                  onHandleInputChange={this.handleInputChange}
+                /> 
+              } />
+              <Route path="/character" render={ () => <CharacterSelectList characterData={this.state.characterData} /> } />
             </Switch>
+
           </section>
         </Router>
+
       </div>
     )
   }
 }
 
+// {this.state.membershipId}
