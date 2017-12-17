@@ -1,15 +1,13 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
   Route,
   withRouter,
   Link
 } from 'react-router-dom'
 
-// Import Components
 import PlatformSelect from './PlatformSelect';
 
-// Request Variables
+// @todo make into static/constants
 const api_key = "b8f2f9674ea24761bfe8f0a49a84d3a3";
 const host = 'https://www.bungie.net/Platform/Destiny2/';
 const requestHeaders = {
@@ -20,51 +18,55 @@ const requestHeaders = {
   })
 };
 
-
 class PlayerInfoForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      submittedName: '',
-      submittedPlatform: ''
-    };
+
+    // Set local state so we can update this value for form submission.
+    this.state = {value: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({submittedName: event.target.value});
+  handleChange(e) {
+    // Set local state
+    this.setState({value: e.target.value});
+    // Callback to parent state.
+    this.props.onHandleInputChange(e.target.value);
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit(e) {
+    e.preventDefault();
 
-    let playerName = encodeURIComponent(this.state.submittedName);
+    // Update the state in the parent based on this components local state.
+    this.props.onHandleInputChange(this.state.value);
+
+    let playerName = encodeURIComponent(this.state.value);
     let endpoint = host + 'SearchDestinyPlayer/4/' + playerName + '/';
     let request = new Request(endpoint, requestHeaders);
 
-    console.log(this);
-
-    // Fetch the MembershipID for the user.
-    // The membership ID is used to access the bungie.net profile and game activity.
+    // Fetch the Bungie.net MembershipID for the user.
     fetch(request)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
 
         let membershipId = data.Response[0].membershipId;
+        this.props.onMembershipChange(membershipId);
+
         // Update the endpoint to request the users profile.
         endpoint = host + '4/Profile/' + membershipId + '/?components=100';
-        // Create a new request with the update endpoint.
         let userRequest = new Request(endpoint, requestHeaders);
 
         return fetch(userRequest)
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
-        console.log(this);
+
+        let characterIds = data.Response.profile.data.characterIds;
+        this.props.onCharacterListChange(characterIds);
+
+        // @todo update route to pass state info to my characterSelect component
         this.props.history.push('/character');
       })
       .catch(function(error) { 
@@ -77,7 +79,7 @@ class PlayerInfoForm extends React.Component {
       <div>
         <form className="form" onSubmit={this.handleSubmit}>
           <PlatformSelect />
-          <input type="text" placeholder="YourName#1377" value={this.state.playerName} onChange={this.handleChange} />
+          <input type="text" placeholder="YourName#1377" value={this.state.value} onChange={this.handleChange} />
           <div>
             <button type="submit">Search</button>
           </div>
