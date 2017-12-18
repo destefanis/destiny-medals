@@ -8,16 +8,33 @@ class CharacterCard extends React.Component {
   render() {
 
     let divStyle = {
-      color: 'white',
-      // backgroundImage: 'url(' + { this.props.background } + ')',
+      backgroundImage: 'url(' + this.props.background + ')'
     };
 
+    // <div className="character-emblem">
+    //   <img className="character-emblem__icon" src={ this.props.emblem } />
+    // </div>
+
     return (
-      <li className="character" style={divStyle}>
-        <img src={ this.props.emblem } />
-        <h3>{ this.props.class }</h3>
-        <span>{ this.props.level }</span>
-        <span>{ this.props.light }</span>
+      <li className="character-list__item" style={divStyle}>
+        <div className="character">
+          <div className="character-content">
+            <h4 className="character-class">
+              { this.props.class }
+            </h4>
+            <div class="character-details">
+              <span className="character-detail character-detail--level">
+                Level { this.props.level }
+              </span>
+              <span className="character-detail">
+                <span className="light-icon">
+                  &#57426;
+                </span>
+                { this.props.light }
+              </span>
+            </div>
+          </div>
+        </div>
       </li>
     )
   }

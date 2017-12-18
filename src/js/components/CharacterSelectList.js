@@ -20,9 +20,9 @@ class CharacterSelectList extends React.Component {
   }
 
   determineClass(classID) {
-    if (classID == 1) {
+    if (classID == 0) {
       return ("Titan");
-    } else if (classID == 2)  {
+    } else if (classID == 1)  {
       return ("Hunter");
     }
     else {
@@ -43,16 +43,17 @@ class CharacterSelectList extends React.Component {
               background={this.addImagePath(character.emblemBackgroundPath)}
               emblem={this.addImagePath(character.emblemPath)}
               class={this.determineClass(character.classType)}
+              light={character.light}
               level={character.baseCharacterLevel}
               key={character.characterId} />
     });
 
     return (
-      <div>
+      <div className="character-select">
         <label className="form-label form-label--transparent">
           Select Character
         </label>
-        <ul>
+        <ul className="character-list">
           {characterCards}
         </ul>
       </div>

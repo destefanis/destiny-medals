@@ -1,0 +1,63 @@
+// Character list and card styles.
+
+.character-list {
+  margin: 0;
+  padding: 0;
+  width: 380px;
+}
+
+.character-list__item {
+  height: 80px;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  list-style: none;
+}
+
+.character {
+  display: flex;  
+  height: 100%;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: flex-start;
+  color: $white;
+  font-size: 1.6rem;
+}
+
+.character-content {
+  flex: 1;
+  padding-left: 25%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.character-class {
+  flex: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.character-detail {
+  flex: 0 0 auto;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+}
+
+.character-detail--level {
+  margin-right: 0.5em;
+}
+
+.light-icon {
+  position: relative;
+  top: -4px;
+  display: inline-block;
+  padding-right: 4px;
+  transform: rotate(45deg);
+  color: $aqua;
+  font-size: 8px;
+}

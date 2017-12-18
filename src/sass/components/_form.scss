@@ -2,6 +2,7 @@
 
 .form {
   position: relative;
+  margin-top: 25%;
   text-align: center;
 
   &::after {
@@ -17,6 +18,18 @@
     border: 1px solid $white;
     pointer-events: none;
   }
+}
+
+.button {
+  outline: none;
+  padding: 20px 50px;
+  border-radius: 4;
+  background: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .form-label {

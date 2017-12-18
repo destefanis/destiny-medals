@@ -88,7 +88,7 @@ class PlayerInfoForm extends React.Component {
           <PlatformSelect />
           <input type="text" placeholder="YourName#1377" value={this.state.value} onChange={this.handleChange} />
           <div>
-            <button type="submit">Search</button>
+            <button className="button" type="submit">Search</button>
           </div>
         </form>
       </div>

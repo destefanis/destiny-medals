@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700');
 @import "mixins";
 @import "reset";
 
@@ -8,5 +8,6 @@
 @import "z-index";
 
 // Components
+@import "components/_character";
 @import "components/_form";
 @import "components/_nav";
