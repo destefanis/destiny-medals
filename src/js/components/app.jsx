@@ -7,6 +7,7 @@ import {
   Link
 } from 'react-router-dom'
 
+import Navigation from './Navigation';
 import PlayerInfoForm from './PlayerInfoForm';
 import CharacterSelectList from './CharacterSelectList';
 
@@ -62,15 +63,9 @@ export class App extends React.Component {
   render () {
     return (
       <div>
-        <nav className="nav">
-          <h1 className="h1">
-            Destiny Medals
-          </h1>
-        </nav>
-
+        <Navigation />
         <Router>
           <section className="main">
-
             <Switch>
               <Route exact path="/" render={ () => 
                 <PlayerInfoForm 
@@ -81,10 +76,8 @@ export class App extends React.Component {
               } />
               <Route path="/character" render={ () => <CharacterSelectList characterData={this.state.characterData} /> } />
             </Switch>
-
           </section>
         </Router>
-
       </div>
     )
   }

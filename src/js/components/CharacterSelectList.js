@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+import Transition from 'react-transition-group/Transition';
 
 import CharacterCard from './CharacterCard';
 
