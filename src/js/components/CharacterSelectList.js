@@ -18,6 +18,8 @@ const requestHeaders = {
 class CharacterSelectList extends React.Component {
   constructor(props) {
     super(props);
+
+    this.fetchActivity = this.fetchActivity.bind(this);
   }
 
   determineClass(classID) {
@@ -38,6 +40,25 @@ class CharacterSelectList extends React.Component {
     return (newPath);
   }
 
+  fetchActivity(characterId) {
+    let endpoint = host + '4/Account/' + this.props.membershipId + '/Character/' + characterId + '/Stats/Activities/?mode=5';
+    // let endpoint = host + '4/Account/' + this.props.membershipId + '/Character/' + characterId + '/Stats/?groups=3';
+
+    let request = new Request(endpoint, requestHeaders);
+
+    // Fetch the Bungie.net MembershipID for the user.
+    fetch(request)
+      .then(response => response.json())
+      .then(data => {
+        console.log('success');
+        console.log(data);
+        this.props.history.push('/character/activity/');
+      })
+      .catch(function(error) { 
+        console.log('Requestfailed', error) 
+      });
+  }
+
   render() {
     let characterCards = this.props.characterData.map((character) => {
       return <CharacterCard 
@@ -46,6 +67,8 @@ class CharacterSelectList extends React.Component {
               class={this.determineClass(character.classType)}
               light={character.light}
               level={character.baseCharacterLevel}
+              onCharacterSelect={this.fetchActivity}
+              character={character.characterId}
               key={character.characterId} />
     });
 

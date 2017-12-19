@@ -7,9 +7,11 @@ import {
   Link
 } from 'react-router-dom'
 
-import Navigation from './Navigation';
-import PlayerInfoForm from './PlayerInfoForm';
+// Component Imports
+import ActivityList from './ActivityList';
 import CharacterSelectList from './CharacterSelectList';
+import PlayerInfoForm from './PlayerInfoForm';
+import Navigation from './Navigation';
 
 // @todo make into static/constants
 const api_key = "b8f2f9674ea24761bfe8f0a49a84d3a3";
@@ -74,7 +76,12 @@ export class App extends React.Component {
                   onHandleInputChange={this.handleInputChange}
                 /> 
               } />
-              <Route path="/character" render={ () => <CharacterSelectList characterData={this.state.characterData} /> } />
+              <Route exact path="/character" render={ () => 
+                <CharacterSelectList 
+                  membershipId={this.state.membershipId}
+                  characterData={this.state.characterData} /> 
+                } />
+              <Route path="/character/activity" render={ () => <ActivityList /> } />
             </Switch>
           </section>
         </Router>

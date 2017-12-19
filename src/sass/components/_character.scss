@@ -1,19 +1,29 @@
 // Character list and card styles.
 
 .character-list {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   width: 380px;
 }
 
 .character-list__item {
+  position: relative;
   height: 80px;
-  margin-bottom: 1em;
+  margin-bottom: 1.25em;
   border-radius: 4px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
   list-style: none;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.28);
+  transition: all 150ms ease;
+  transform: translateY(0);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  }
 }
 
 .character {
@@ -60,4 +70,17 @@
   transform: rotate(45deg);
   color: $aqua;
   font-size: 8px;
+}
+
+.character-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  height: 25px;
+  width: 25px;
+
+  svg {
+    fill: $white;
+  }
 }
