@@ -42,16 +42,13 @@ class CharacterSelectList extends React.Component {
 
   fetchActivity(characterId) {
     let endpoint = host + '4/Account/' + this.props.membershipId + '/Character/' + characterId + '/Stats/Activities/?mode=5';
-    // let endpoint = host + '4/Account/' + this.props.membershipId + '/Character/' + characterId + '/Stats/?groups=3';
-
     let request = new Request(endpoint, requestHeaders);
 
-    // Fetch the Bungie.net MembershipID for the user.
+    // Fetch the players recent activity.
     fetch(request)
       .then(response => response.json())
       .then(data => {
-        console.log('success');
-        console.log(data);
+        this.props.onActivityHistoryUpdate(data.Response.activities);
         this.props.history.push('/character/activity/');
       })
       .catch(function(error) { 

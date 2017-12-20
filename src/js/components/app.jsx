@@ -32,12 +32,14 @@ export class App extends React.Component {
       userPlatform: '4',
       membershipId: '1',
       characterData: [],
+      activityHistory: [],
       characterId: '',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMembershipChange = this.handleMembershipChange.bind(this);
     this.handleCharacterListChange = this.handleCharacterListChange.bind(this);
+    this.handleActivityHistoryChange = this.handleActivityHistoryChange.bind(this);
   }
 
   // Callback methods
@@ -54,12 +56,15 @@ export class App extends React.Component {
   }
 
   handleCharacterListChange(characterData) {
-
     this.setState({
       characterData: [...this.state.characterData, characterData]
     });
+  }
 
-    console.log(this.state.characterData);
+  handleActivityHistoryChange(activityHistory) {
+    this.setState({
+      activityHistory: [...this.state.activityHistory, activityHistory]
+    });
   }
 
   render () {
@@ -79,9 +84,10 @@ export class App extends React.Component {
               <Route exact path="/character" render={ () => 
                 <CharacterSelectList 
                   membershipId={this.state.membershipId}
-                  characterData={this.state.characterData} /> 
+                  characterData={this.state.characterData}
+                  onActivityHistoryUpdate={this.handleActivityHistoryChange} /> 
                 } />
-              <Route path="/character/activity" render={ () => <ActivityList /> } />
+              <Route path="/character/activity" render={ () => <ActivityList activityHistoryData={this.state.activityHistory} /> } />
             </Switch>
           </section>
         </Router>
