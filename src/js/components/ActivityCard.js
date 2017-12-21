@@ -9,11 +9,17 @@ class ActivityCard extends React.Component {
 
   render() {
 
+    let divStyle = {
+      backgroundImage: 'url("https://www.bungie.net/' + this.props.activityDefinition.pgcrImage + '")'
+    };
+
+    let activityDefinition = this.props.activityDefinition;
+
     return (
-      <div className="activity-history">
-        <ul class="activity-list">
-          {this.props.activityHistoryData}
-        </ul>
+      <div className="activity-card" style={divStyle}>
+        <span className="card__condition">{this.props.condition}</span>
+        <h2 className="card__title">{this.props.activityDefinition.displayProperties.name}</h2>
+        <p className="card__details">Kills: {this.props.kills}</p>
       </div>
     )
   }

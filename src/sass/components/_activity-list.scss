@@ -1,0 +1,53 @@
+// Activity List and Card Styling
+
+.activity-list {
+  width: 600px;
+  margin: 2em auto;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.activity-card {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  position: relative;
+  list-style: none;
+  height: 240px;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0 20px 20px;
+  border-radius: 4px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 6px 12px rgba($black, 0.24);
+  text-align: left;
+  color: $white;
+}
+
+.card__condition {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+  padding: 4px 15px;
+  border: 1px solid $white;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card__title {
+  margin-top: 0;
+  letter-spacing: 0.025em;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
+.card__details {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
