@@ -14,12 +14,23 @@ class ActivityCard extends React.Component {
     };
 
     let activityDefinition = this.props.activityDefinition;
+    console.log(activityDefinition.displayProperties.icon);
+    let activityIcon = 'https://www.bungie.net/' + activityDefinition.displayProperties.icon; 
 
     return (
       <div className="activity-card" style={divStyle}>
         <span className="card__condition">{this.props.condition}</span>
-        <h2 className="card__title">{this.props.activityDefinition.displayProperties.name}</h2>
-        <p className="card__details">Kills: {this.props.kills}</p>
+        <span className="card__activity-icon">
+          <img src={activityIcon} />
+        </span>
+        <h2 className="card__title">{activityDefinition.displayProperties.name}</h2>
+        <div className="activity-card__content">
+          <p className="card__details">
+            Kills: {this.props.kills}
+            Assists: {this.props.assists}
+            Deaths: {this.props.deaths}
+          </p>
+        </div>
       </div>
     )
   }
