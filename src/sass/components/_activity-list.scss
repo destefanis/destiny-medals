@@ -7,6 +7,18 @@
   text-align: center;
 }
 
+.activity {
+  margin-bottom: 1em;
+  box-shadow: 0 6px 12px rgba($black, 0.24);
+  border-radius: 8px;
+}
+
+.activity-report {
+  background: $blue-dark;
+  color: $white;
+  padding: 20px;
+}
+
 .activity-card {
   display: flex;
   flex-flow: column;
@@ -15,23 +27,22 @@
   list-style: none;
   height: 260px;
   width: 100%;
-  margin-bottom: 1em;
   padding: 0 5px 20px;
   border-radius: 8px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0 6px 12px rgba($black, 0.24);
+  background-color: $blue;
   text-align: left;
   color: $white;
   cursor: pointer;
   transform: translateY(0);
   transition: all 350ms ease;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 14px rgba($black, 0.18);
-  }
+  // &:hover {
+  //   transform: translateY(-2px);
+  //   box-shadow: 0 8px 14px rgba($black, 0.18);
+  // }
 }
 
 .activity-card__details {

@@ -48,8 +48,6 @@ class ActivityList extends React.Component {
     return (newDate);
   }
 
-  // let endpoint = host + 'Stats/PostGameCarnageReport/1153307306/';
-
   render() {
     let listSize = 30;
     let activities = this.props.activityHistoryData[0].slice(0, listSize).map((activity, index) => {
