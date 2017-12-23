@@ -13,17 +13,6 @@ import CharacterSelectList from './CharacterSelectList';
 import PlayerInfoForm from './PlayerInfoForm';
 import Navigation from './Navigation';
 
-// @todo make into static/constants
-const api_key = "b8f2f9674ea24761bfe8f0a49a84d3a3";
-const host = 'https://www.bungie.net/Platform/Destiny2/';
-const requestHeaders = {
-  method: 'GET',
-  mode: 'cors',
-  headers: new Headers({
-    "X-API-Key": api_key
-  })
-};
-
 export class App extends React.Component {
   constructor(props) {
     super(props);

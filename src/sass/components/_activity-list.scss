@@ -24,6 +24,14 @@
   box-shadow: 0 6px 12px rgba($black, 0.24);
   text-align: left;
   color: $white;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: all 350ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 14px rgba($black, 0.18);
+  }
 }
 
 .activity-card__details {

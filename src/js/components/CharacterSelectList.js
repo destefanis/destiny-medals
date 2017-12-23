@@ -4,16 +4,9 @@ import Transition from 'react-transition-group/Transition';
 
 import CharacterCard from './CharacterCard';
 
-// @todo make into static/constants
-const api_key = "b8f2f9674ea24761bfe8f0a49a84d3a3";
-const host = 'https://www.bungie.net/Platform/Destiny2/';
-const requestHeaders = {
-  method: 'GET',
-  mode: 'cors',
-  headers: new Headers({
-    "X-API-Key": api_key
-  })
-};
+import requestHeader from '../constants/requestHeader.js';
+import host from '../constants/host.js';
+
 
 class CharacterSelectList extends React.Component {
   constructor(props) {
@@ -42,7 +35,7 @@ class CharacterSelectList extends React.Component {
 
   fetchActivity(characterId) {
     let endpoint = host + '4/Account/' + this.props.membershipId + '/Character/' + characterId + '/Stats/Activities/?mode=5';
-    let request = new Request(endpoint, requestHeaders);
+    let request = new Request(endpoint, requestHeader);
 
     // Fetch the players recent activity.
     fetch(request)

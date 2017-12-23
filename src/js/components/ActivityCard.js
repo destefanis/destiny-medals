@@ -5,6 +5,20 @@ import Transition from 'react-transition-group/Transition';
 class ActivityCard extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { isActive: false };
+    this.fetchReport = this.fetchReport.bind(this);
+  }
+
+  fetchReport(instanceId) {
+    if (this.state.isActive === false) {
+      this.setState({isActive: true });
+    } else {
+      this.setState({isActive: false });
+    }
+    
+    console.log(instanceId);
+    console.log(this.state.isActive);
   }
 
   render() {
@@ -13,12 +27,12 @@ class ActivityCard extends React.Component {
       backgroundImage: 'url("https://www.bungie.net' + this.props.activityDefinition.pgcrImage + '")'
     };
 
-    let activityDefinition = this.props.activityDefinition;
-    let modeData = this.props.modeData;
-    let activityIcon = 'https://www.bungie.net/' + modeData.displayProperties.icon; 
+    const activityDefinition = this.props.activityDefinition;
+    const modeData = this.props.modeData;
+    const activityIcon = 'https://www.bungie.net/' + modeData.displayProperties.icon; 
 
     return (
-      <div className="activity-card" style={divStyle}>
+      <div className="activity-card" style={divStyle} onClick={ () => {this.fetchReport(this.props.instanceId)}}>
         <div className="activity-card__details">
           <span className="activity-icon">
             <img src={activityIcon} />

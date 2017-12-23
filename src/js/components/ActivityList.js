@@ -11,15 +11,12 @@ import ActivityModeDefinition from '../data/DestinyActivityModeDefinition.json';
 class ActivityList extends React.Component {
   constructor(props) {
     super(props);
-
     console.log(this.props.activityHistoryData[0])
-    console.log(moment.now());
     // console.log(ActivityModeDefinition[470484296].pgcrImage);
   }
 
   // Find the name of the activity/map within our definition json.
   findActivityData(referenceId) {
-    //let activityDefinition = PvpActivityDefinition.find(activity => activity.hash === referenceId);
     let activityDefinition = PvpActivityDefinition[referenceId];
     return (activityDefinition);
   }
@@ -55,16 +52,17 @@ class ActivityList extends React.Component {
 
   render() {
     let listSize = 30;
-    let activities = this.props.activityHistoryData[0].slice(0, listSize).map((activity) => {
+    let activities = this.props.activityHistoryData[0].slice(0, listSize).map((activity, index) => {
       return <ActivityCard
               activityDefinition={this.findActivityData(activity.activityDetails.referenceId)}
               modeData={this.findModeData(activity.activityDetails.directorActivityHash, activity.activityDetails.mode)}
               kills={activity.values.kills.basic.displayValue}
               deaths={activity.values.deaths.basic.displayValue}
               assists={activity.values.assists.basic.displayValue}
-              condition={activity.values.standing.basic.displayValue} 
-              key={activity.activityDetails.instanceId}
-              date={this.parseDate(activity.period)} />
+              condition={activity.values.standing.basic.displayValue}
+              date={this.parseDate(activity.period)}
+              instanceId={activity.activityDetails.instanceId}
+              key={index} />
     });
 
     return (

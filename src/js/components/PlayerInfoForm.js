@@ -3,16 +3,8 @@ import { withRouter } from 'react-router-dom'
 
 import PlatformSelect from './PlatformSelect';
 
-// @todo make into static/constants
-const api_key = "b8f2f9674ea24761bfe8f0a49a84d3a3";
-const host = 'https://www.bungie.net/Platform/Destiny2/';
-const requestHeaders = {
-  method: 'GET',
-  mode: 'cors',
-  headers: new Headers({
-    "X-API-Key": api_key
-  })
-};
+import requestHeader from '../constants/requestHeader.js';
+import host from '../constants/host.js';
 
 class PlayerInfoForm extends React.Component {
   constructor(props) {
@@ -40,7 +32,7 @@ class PlayerInfoForm extends React.Component {
 
     let playerName = encodeURIComponent(this.state.value);
     let endpoint = host + 'SearchDestinyPlayer/4/' + playerName + '/';
-    let request = new Request(endpoint, requestHeaders);
+    let request = new Request(endpoint, requestHeader);
     let membershipId;
 
     // Fetch the Bungie.net MembershipID for the user.
@@ -53,7 +45,7 @@ class PlayerInfoForm extends React.Component {
         this.props.onMembershipChange(membershipId);
         // Update the endpoint to request the users profile.
         endpoint = host + '4/Profile/' + membershipId + '/?components=100';
-        let userRequest = new Request(endpoint, requestHeaders);
+        let userRequest = new Request(endpoint, requestHeader);
 
         return fetch(userRequest)
       })
@@ -65,7 +57,7 @@ class PlayerInfoForm extends React.Component {
         // Request character info for each character.
         for (let characterId of data.Response.profile.data.characterIds) {
           endpoint = host + '4/Profile/' + membershipId + '/Character/' + characterId + '/?components=200';
-          let characterRequest = new Request(endpoint, requestHeaders);
+          let characterRequest = new Request(endpoint, requestHeader);
 
           fetch(characterRequest)
             .then(response => response.json())
