@@ -26,28 +26,45 @@
   color: $white;
 }
 
-.card__condition {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: inline-block;
-  padding: 4px 10px 2px;
-  border: 1px solid $white;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 300;
-  font-size: 1.2rem;
-}
-
 .card__title {
+  display: inline-block;
+  color: $blue-dark;
+  background: $white;
+  padding: 3px 12px 0;
   margin-top: 0;
+  margin-bottom: 0.25em;
   letter-spacing: 0.025em;
   font-weight: 500;
-  font-size: 3.2rem;
+  font-size: 2.2rem;
 }
 
 .card__details {
-  margin: 0;
+  display: inline-block;
+  margin-right: 0.5em;
+  padding: 4px 10px 2px;
+  border: 1px solid $white;
+  color: $white;
+  letter-spacing: 0.5px;
+  font-weight: 300;
   font-size: 1.4rem;
-  font-weight: 400;
+}
+
+.card__activity-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 64px;
+  width: 64px;
+  border-radius: 100%;
+  padding: 10px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+  background: $blue;
+}
+
+.card__activity-mode {
+  flex: 1;
+  margin: auto 0;
+  letter-spacing: .025em;
+  font-size: 1.4rem;
+  font-weight: 300;
 }

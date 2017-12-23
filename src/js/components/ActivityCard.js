@@ -10,26 +10,27 @@ class ActivityCard extends React.Component {
   render() {
 
     let divStyle = {
-      backgroundImage: 'url("https://www.bungie.net/' + this.props.activityDefinition.pgcrImage + '")'
+      backgroundImage: 'url("https://www.bungie.net' + this.props.activityDefinition.pgcrImage + '")'
     };
 
     let activityDefinition = this.props.activityDefinition;
-    console.log(activityDefinition.displayProperties.icon);
-    let activityIcon = 'https://www.bungie.net/' + activityDefinition.displayProperties.icon; 
+    let modeData = this.props.modeData;
+    let activityIcon = 'https://www.bungie.net/' + modeData.displayProperties.icon; 
 
     return (
       <div className="activity-card" style={divStyle}>
-        <span className="card__condition">{this.props.condition}</span>
         <span className="card__activity-icon">
           <img src={activityIcon} />
+          <span className="card__activity-mode">
+            {modeData.displayProperties.name}
+          </span>
         </span>
-        <h2 className="card__title">{activityDefinition.displayProperties.name}</h2>
+        <div className="title-wrapper">
+          <h2 className="card__title">{activityDefinition.displayProperties.name}</h2>
+        </div>
         <div className="activity-card__content">
-          <p className="card__details">
-            Kills: {this.props.kills}
-            Assists: {this.props.assists}
-            Deaths: {this.props.deaths}
-          </p>
+          <span className="card__details">{this.props.condition}</span>
+          <span className="card__details">Kills: {this.props.kills}</span>
         </div>
       </div>
     )
