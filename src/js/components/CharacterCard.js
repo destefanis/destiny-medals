@@ -30,7 +30,7 @@ class CharacterCard extends React.Component {
               </span>
               <span className="character-detail">
                 <span className="light-icon">
-                  &#57426;
+                  ✧
                 </span>
                 { this.props.light } Light
               </span>

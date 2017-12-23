@@ -13,11 +13,11 @@
   justify-content: flex-end;
   position: relative;
   list-style: none;
-  height: 240px;
+  height: 260px;
   width: 100%;
   margin-bottom: 1em;
-  padding: 0 20px 20px;
-  border-radius: 4px;
+  padding: 0 5px 20px;
+  border-radius: 8px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,16 +26,58 @@
   color: $white;
 }
 
+.activity-card__details {
+  flex: 0 0 auto;
+  justify-self: flex-start;
+  margin-bottom: auto;
+  display: flex;
+  flex-flow: row;
+  padding-right: 10px;
+  letter-spacing: .025em;
+  font-size: 1.4rem;
+  font-weight: 300;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.details-mode {
+  margin: auto 0;
+}
+
+.details-time {
+  align-self: center;
+  justify-self: flex-end;
+  margin-left: auto;
+  text-transform: capitalize;
+}
+
+.activity-icon {
+  height: 64px;
+  width: 64px;
+  border-radius: 100%;
+  padding: 10px;
+  // box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+  // background: $blue;
+}
+
+.card-title-wrapper {
+  padding: 0 10px;
+}
+
 .card__title {
   display: inline-block;
-  color: $blue-dark;
-  background: $white;
-  padding: 3px 12px 0;
+  color: $white;
+  // background: $white;
+  // padding: 3px 12px 0;
   margin-top: 0;
   margin-bottom: 0.25em;
   letter-spacing: 0.025em;
-  font-weight: 500;
-  font-size: 2.2rem;
+  font-weight: 400;
+  font-size: 2.8rem;
+}
+
+.activity-card__content {
+  padding: 0 10px;
 }
 
 .content-results {
@@ -47,34 +89,4 @@
   letter-spacing: 0.5px;
   font-weight: 300;
   font-size: 1.4rem;
-}
-
-.activity-card__details {
-  flex: 1 1 100%;
-  display: flex;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  flex-flow: row;
-  letter-spacing: .025em;
-  font-size: 1.4rem;
-  font-weight: 300;
-  justify-content: center;
-}
-
-.details-mode {
-  margin: auto 0;
-}
-
-.details-time {
-  align-self: flex-end;
-}
-
-.activity-icon {
-  height: 64px;
-  width: 64px;
-  border-radius: 100%;
-  padding: 10px;
-  // box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
-  // background: $blue;
 }

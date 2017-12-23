@@ -27,10 +27,10 @@ class ActivityCard extends React.Component {
             {modeData.displayProperties.name}
           </span>
           <span className="details-time">
-            {modeData.displayProperties.date}
+            {this.props.date}
           </span>
         </div>
-        <div className="title-wrapper">
+        <div className="card-title-wrapper">
           <h2 className="card__title">{activityDefinition.displayProperties.name}</h2>
         </div>
         <div className="activity-card__content">
