@@ -38,7 +38,7 @@
   font-size: 2.2rem;
 }
 
-.card__details {
+.content-results {
   display: inline-block;
   margin-right: 0.5em;
   padding: 4px 10px 2px;
@@ -49,22 +49,32 @@
   font-size: 1.4rem;
 }
 
-.card__activity-icon {
+.activity-card__details {
+  flex: 1 1 100%;
+  display: flex;
   position: absolute;
   top: 10px;
   left: 10px;
+  flex-flow: row;
+  letter-spacing: .025em;
+  font-size: 1.4rem;
+  font-weight: 300;
+  justify-content: center;
+}
+
+.details-mode {
+  margin: auto 0;
+}
+
+.details-time {
+  align-self: flex-end;
+}
+
+.activity-icon {
   height: 64px;
   width: 64px;
   border-radius: 100%;
   padding: 10px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
-  background: $blue;
-}
-
-.card__activity-mode {
-  flex: 1;
-  margin: auto 0;
-  letter-spacing: .025em;
-  font-size: 1.4rem;
-  font-weight: 300;
+  // box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+  // background: $blue;
 }

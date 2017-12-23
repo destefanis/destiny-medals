@@ -19,18 +19,23 @@ class ActivityCard extends React.Component {
 
     return (
       <div className="activity-card" style={divStyle}>
-        <span className="card__activity-icon">
-          <img src={activityIcon} />
-          <span className="card__activity-mode">
+        <div className="activity-card__details">
+          <span className="activity-icon">
+            <img src={activityIcon} />
+          </span>
+          <span className="details-mode">
             {modeData.displayProperties.name}
           </span>
-        </span>
+          <span className="details-time">
+            {modeData.displayProperties.date}
+          </span>
+        </div>
         <div className="title-wrapper">
           <h2 className="card__title">{activityDefinition.displayProperties.name}</h2>
         </div>
         <div className="activity-card__content">
-          <span className="card__details">{this.props.condition}</span>
-          <span className="card__details">Kills: {this.props.kills}</span>
+          <span className="content-results">{this.props.condition}</span>
+          <span className="content-results">Kills: {this.props.kills}</span>
         </div>
       </div>
     )
