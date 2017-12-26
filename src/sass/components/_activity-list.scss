@@ -14,9 +14,10 @@
 }
 
 .activity-report {
-  background: $blue-dark;
-  color: $white;
-  padding: 20px;
+  position: relative;
+  background: #f9f9f9;
+  margin-top: -5px;
+  color: $blue-dark;
 }
 
 .activity-card {

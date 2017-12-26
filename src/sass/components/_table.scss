@@ -1,0 +1,71 @@
+.report-scoreboard {
+  padding: 0 20px 20px;
+  background: $white;
+}
+
+.score-board__team {
+  margin-bottom: 0.5em;
+  padding-top: 1em;
+  text-align: left;
+  color: $blue;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+
+  &.score-board__team--alpha {
+    color: #DA2C38;
+  }
+}
+
+.score-board__total {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 14px 40px 12px;
+  line-height: 1;
+  background: $blue;
+  color: $white;
+  font-size: 24px;
+  font-weight: 500;
+
+  &.score-board__total--alpha {
+    background: #DA2C38;
+  }
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.table-header {
+  padding: 5px;
+  border-bottom: 1px solid $blue-dark;
+  text-align: right;
+  font-weight: 400;
+
+  &:first-of-type {
+    text-align: left;
+  }
+}
+
+.table-row {
+  border-bottom: 1px solid #f9f9f9;
+
+  &:nth-child(odd) {
+    background: #f7f7f7;
+  }
+}
+
+.table-column {
+  padding: 5px;
+  text-align: right;
+
+  &:first-of-type {
+    text-align: left;
+  }
+}

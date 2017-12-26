@@ -11,36 +11,38 @@ class ActivityCard extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { isActive: false };
-    this.fetchReport = this.fetchReport.bind(this);
+    this.state = { 
+      isActive: false,
+      report: null,
+    };
+
     this.toggleActive = this.toggleActive.bind(this);
   }
 
+  // Toggle Open the report and make a request if it's the first time.
   toggleActive(instanceId) {
-    if (this.state.isActive === false) {
-      this.setState({isActive: true });
-    } else {
-      this.setState({isActive: false });
-    }
-    
-    // console.log(instanceId);
-    // console.log(this.state.isActive);
-  }
-
-  fetchReport(instanceId) {
     let endpoint = host + 'Stats/PostGameCarnageReport/' + instanceId + '/';
     let request = new Request(endpoint, requestHeader);
 
-    // Fetch the activity report.
-    fetch(request)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        return(data.Response);
-      })
-      .catch(function(error) { 
-        console.log('Requestfailed', error) 
-      });
+    if (this.state.isActive === false) {
+
+      // Only make a request if the state is empty.
+      if (this.state.report === null) {
+        fetch(request)
+          .then(response => response.json())
+          .then(data => {
+            this.setState({report: data.Response });
+            this.setState({isActive: true });
+          })
+          .catch(function(error) { 
+            console.log('Requestfailed', error) 
+          });
+      } else {
+        this.setState({isActive: true });
+      }
+    } else {
+      this.setState({isActive: false });
+    }
   }
 
   render() {
@@ -58,7 +60,7 @@ class ActivityCard extends React.Component {
 
     // Conditionally render the activity report.
     if (isActive) {
-      report = <ActivityReport report={this.fetchReport(instanceId)} />;
+      report = <ActivityReport report={this.state.report} />;
     } else {
       report = null;
     }
