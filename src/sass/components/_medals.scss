@@ -22,7 +22,7 @@
 
 .medal-icon {
   height: auto;
-  width: 70px;
+  width: 90px;
 }
 
 .medal-count {
@@ -30,10 +30,29 @@
   top: -9px;
   right: -5px;
   display: inline-block;
-  background: $aqua;
+  background: $aqua-dark;
   color: $white;
   padding: 2px 9px 1px;
   border-radius: 50%;
   font-size: 1.4rem;
   font-weight: 300;
+}
+
+.tooltip {
+  background: $black;
+  font-weight: 300;
+
+  &.__react_component_tooltip {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  strong {
+    letter-spacing: 0.025em;
+    font-weight: 400;
+  }
 }

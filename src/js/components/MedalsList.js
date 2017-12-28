@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip'
 
 import MedalsDefinition from '../data/DestinyMedals.json';
 
@@ -10,14 +11,21 @@ class MedalsList extends React.Component {
   }
 
   // Find the icon image path within our Medals json.
-  findMedalData(medal) {
+  findMedalImage(medal) {
     const host = "https://bungie.net/";
-    console.log(medal);
 
     let iconPath = MedalsDefinition[medal].iconImage;
     let fullIconPath = host + iconPath;
 
     return (fullIconPath);
+  }
+
+  findMedalData(medal) {
+    let medalName = MedalsDefinition[medal].name;
+    let medalDescription = MedalsDefinition[medal].description;
+    let medalData = "<span><strong>" + medalName + "</strong><p>" + medalDescription + "</p></span>";
+
+    return (medalData);
   }
 
   findMedalCount(medal) {
@@ -33,12 +41,12 @@ class MedalsList extends React.Component {
     const medalValues = Object.keys(extendedValues).filter((key) => key.match(regex));
 
     const medal = medalValues.map((medal, index) =>
-      <figure className="medal" key={index}>
-        <img className="medal-icon" key={index} src={this.findMedalData(medal)} />
+      <div className="medal" key={index} data-tip={this.findMedalData(medal)}>
+        <img className="medal-icon" key={index} src={this.findMedalImage(medal)} />
         <span className="medal-count">
           {this.findMedalCount(medal)}
         </span>
-      </figure>
+      </div>
     );
 
     return (
@@ -49,6 +57,7 @@ class MedalsList extends React.Component {
         <div className="medals-earned">
           {medal}
         </div>
+        <ReactTooltip data-event="mouseenter click" className="tooltip" effect="solid" html={true} />
       </div>
     )
   }

@@ -62,6 +62,8 @@
          25
       ],
       "category":10,
+      "name":"Regent",
+      "description":"Eliminate multiple opponents with a sword.",
       "statName":"###medal_strings.pvp_weapon_sword###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_sword###",
       "unitType":1,
@@ -95,6 +97,8 @@
          25
       ],
       "category":10,
+      "name":"Sniper Medal",
+      "description":"Eliminate multiple opponents with a sniper rifle.",
       "statName":"###medal_strings.pvp_weapon_sniper###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_sniper###",
       "unitType":1,
@@ -128,6 +132,8 @@
          25
       ],
       "category":10,
+      "name":"Sub Machinist",
+      "description":"Eliminate multiple opponents with a submachine gun.",
       "statName":"###medal_strings.pvp_weapon_smg###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_smg###",
       "unitType":1,
@@ -162,6 +168,8 @@
       ],
       "category":10,
       "statName":"###medal_strings.pvp_weapon_sidearm###",
+      "name":"One For Each Of You",
+      "description":"Eliminate multiple opponents with a sidearm.",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_sidearm###",
       "unitType":1,
       "iconImage":"/common/destiny2_content/icons/icon_ma7e6a9f59d506c9351c2e47c342d6fbc.png",
@@ -194,6 +202,8 @@
          25
       ],
       "category":10,
+      "name":"Close Encounters",
+      "description":"Eliminate multiple opponents with a shotgun.",
       "statName":"###medal_strings.pvp_weapon_shotgun###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_shotgun###",
       "unitType":1,
@@ -227,6 +237,8 @@
          25
       ],
       "category":10,
+      "name":"Field Scout",
+      "description":"Eliminate multiple opponents with a scout rifle.",
       "statName":"###medal_strings.pvp_weapon_scout###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_scout###",
       "unitType":1,
@@ -260,6 +272,8 @@
          25
       ],
       "category":10,
+      "name":"Splash Damage",
+      "description":"Eliminate multiple opponents with a Rocket Launcher.",
       "statName":"###medal_strings.pvp_weapon_rocket###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_rocket###",
       "unitType":1,
@@ -293,6 +307,8 @@
          25
       ],
       "category":10,
+      "name":"Lethal Cadence",
+      "description":"Eliminate multiple opponents with a pulse rifle.",
       "statName":"###medal_strings.pvp_weapon_pulse###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_pulse###",
       "unitType":1,
@@ -326,6 +342,8 @@
          25
       ],
       "category":10,
+      "name":"Hawkeye",
+      "description":"Eliminate an opponent with only precision hits.",
       "statName":"###medal_strings.pvp_weapon_hand_cannon###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_hand_cannon###",
       "unitType":1,
@@ -359,6 +377,8 @@
          25
       ],
       "category":10,
+      "name":"Direct Hit",
+      "description":"Eliminate an opponent with a direct hit from a Grenade Launcher.",
       "statName":"###medal_strings.pvp_weapon_grenade###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_grenade###",
       "unitType":1,
@@ -392,6 +412,8 @@
          25
       ],
       "category":10,
+      "name":"Cold Fusion",
+      "description":"Eliminate multiple opponents with a fusion rifle.",
       "statName":"###medal_strings.pvp_weapon_fusion###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_fusion###",
       "unitType":1,
@@ -425,6 +447,8 @@
          25
       ],
       "category":10,
+      "name":"Assault Specialist",
+      "description":"Eliminate multiple opponents with an auto rifle.",
       "statName":"###medal_strings.pvp_weapon_auto###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_weapon_auto###",
       "unitType":1,
@@ -458,6 +482,8 @@
          25
       ],
       "category":10,
+      "name":"Last Stand Survivor",
+      "description":"Win a round of survival with a last stand.",
       "statName":"###medal_strings.pvp_survival_win_last_stand###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_survival_win_last_stand###",
       "unitType":1,
@@ -491,6 +517,8 @@
          25
       ],
       "category":10,
+      "name":"Survivor",
+      "description":"Survive a round of survival without dying.",
       "statName":"###medal_strings.pvp_survival_undefeated###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_survival_undefeated###",
       "unitType":1,
@@ -524,6 +552,8 @@
          25
       ],
       "category":10,
+      "name":"Survival Team Undefeated",
+      "description":"Win a match of survival without losing a round.",
       "statName":"###medal_strings.pvp_survival_team_undefeated###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_survival_team_undefeated###",
       "unitType":1,
@@ -557,6 +587,8 @@
          25
       ],
       "category":10,
+      "name":"Survival Quick Wipe",
+      "description":"Wipe an enemy team in round of survival quickly.",
       "statName":"###medal_strings.pvp_survival_quick_wipe###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_survival_quick_wipe###",
       "unitType":1,
@@ -590,6 +622,8 @@
          25
       ],
       "category":10,
+      "name":"Undertaker",
+      "description":"Eliminate an entire enemy team when lives are at 0 in survival.",
       "statName":"###medal_strings.pvp_survival_knockout###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_survival_knockout###",
       "unitType":1,
@@ -623,6 +657,8 @@
          25
       ],
       "category":10,
+      "name":"Survival Comeback",
+      "description":"Win a round of survival after being the first team to hit zero lives.",
       "statName":"###medal_strings.pvp_survival_comeback###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_survival_comeback###",
       "unitType":1,
@@ -656,6 +692,8 @@
          25
       ],
       "category":10,
+      "name":"Safe and Secured",
+      "description":"Secure multiple crests in supremacy.",
       "statName":"###medal_strings.pvp_supremacy_secure_streak###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_supremacy_secure_streak###",
       "unitType":1,
@@ -689,6 +727,8 @@
          25
       ],
       "category":10,
+      "name":"Recovery Streak",
+      "description":"Recove multiple crests in supremacy in a row without dying.",
       "statName":"###medal_strings.pvp_supremacy_recover_streak###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_supremacy_recover_streak###",
       "unitType":1,
@@ -722,6 +762,8 @@
          25
       ],
       "category":10,
+      "name":"Perfect Secure Rate",
+      "description":"Secure every crest from every opponent you eliminate.",
       "statName":"###medal_strings.pvp_supremacy_perfect_secure_rate###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_supremacy_perfect_secure_rate###",
       "unitType":1,
@@ -755,6 +797,8 @@
          25
       ],
       "category":10,
+      "name":"My Crest Is My Own",
+      "description":"Secure your own crest after being eliminated.",
       "statName":"###medal_strings.pvp_supremacy_never_collected###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_supremacy_never_collected###",
       "unitType":1,
@@ -788,6 +832,8 @@
          25
       ],
       "category":10,
+      "name":"First Crest Secured",
+      "description":"Secure the first crest in Supremacy.",
       "statName":"###medal_strings.pvp_supremacy_first_crest###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_supremacy_first_crest###",
       "unitType":1,
@@ -821,6 +867,8 @@
          25
       ],
       "category":10,
+      "name":"Crestfallen",
+      "description":"Eliminate multiple opponents and claim their crests.",
       "statName":"###medal_strings.pvp_supremacy_crest_credit_streak###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_supremacy_crest_credit_streak###",
       "unitType":1,
@@ -854,6 +902,8 @@
          25
       ],
       "category":10,
+      "name":"No So Fast My Friend",
+      "description":"Shut down an opponents super.",
       "statName":"###medal_strings.pvp_super_shutdown###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_super_shutdown###",
       "unitType":1,
@@ -887,6 +937,8 @@
          25
       ],
       "category":10,
+      "name":"Wrecking Crew",
+      "description":"Your team has collectively earned a killing streak without dying.",
       "statName":"###medal_strings.pvp_streak_team###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_streak_team###",
       "unitType":1,
@@ -920,6 +972,8 @@
          25
       ],
       "category":10,
+      "name":"Shutdown",
+      "description":"End an opponents elimination streak.",
       "statName":"###medal_strings.pvp_streak_shutdown###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_streak_shutdown###",
       "unitType":1,
@@ -953,6 +1007,8 @@
          25
       ],
       "category":10,
+      "name":"Combined Fire",
+      "description":"Opponent eliminated by team fire.",
       "statName":"###medal_strings.pvp_streak_combined###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_streak_combined###",
       "unitType":1,
@@ -986,6 +1042,8 @@
          25
       ],
       "category":10,
+      "name":"We Ran Out Of Medals",
+      "description":"20 Players eliminated without dying.",
       "statName":"###medal_strings.pvp_streak_absurd###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_streak_absurd###",
       "unitType":1,
@@ -1019,6 +1077,8 @@
          25
       ],
       "category":10,
+      "name":"Ruthless",
+      "description":"Eliminate five players without dying.",
       "statName":"###medal_strings.pvp_streak_5x###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_streak_5x###",
       "unitType":1,
@@ -1052,6 +1112,8 @@
          25
       ],
       "category":10,
+      "name":"Unyielding",
+      "description":"Eliminate ten players without dying.",
       "statName":"###medal_strings.pvp_streak_10x###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_streak_10x###",
       "unitType":1,
@@ -1085,6 +1147,8 @@
          25
       ],
       "category":10,
+      "name":"Quick Strike",
+      "description":"First elimination in a match.",
       "statName":"###medal_strings.pvp_quick_strike###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_quick_strike###",
       "unitType":1,
@@ -1118,6 +1182,8 @@
          25
       ],
       "category":10,
+      "name":"Best Served Cold",
+      "description":"Eliminate the player that eliminated you.",
       "statName":"###medal_strings.pvp_payback###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_payback###",
       "unitType":1,
@@ -1151,6 +1217,8 @@
          25
       ],
       "category":10,
+      "name":"Annihilation",
+      "description":"Eliminate an entire team at once.",
       "statName":"###medal_strings.pvp_multi_entire_team###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_multi_entire_team###",
       "unitType":1,
@@ -1184,6 +1252,8 @@
          25
       ],
       "category":10,
+      "name":"Lights Out",
+      "description":"Rapidly eliminate four players in a row.",
       "statName":"###medal_strings.pvp_multi_4x###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_multi_4x###",
       "unitType":1,
@@ -1217,6 +1287,8 @@
          25
       ],
       "category":10,
+      "name":"Triple Play",
+      "description":"Rapidly eliminate three players in a row.",
       "statName":"###medal_strings.pvp_multi_3x###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_multi_3x###",
       "unitType":1,
@@ -1250,6 +1322,8 @@
          25
       ],
       "category":10,
+      "name":"Double Play",
+      "description":"Rapidly eliminate two players in a row.",
       "statName":"###medal_strings.pvp_multi_2x###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_multi_2x###",
       "unitType":1,
@@ -1283,6 +1357,8 @@
          25
       ],
       "category":10,
+      "name":"Undefeated",
+      "description":"Survive an entire match without dying with at least 12 eliminations.",
       "statName":"###medal_strings.pvp_match_undefeated###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_match_undefeated###",
       "unitType":1,
@@ -1316,6 +1392,8 @@
          25
       ],
       "category":10,
+      "name":"Time and Half",
+      "description":"Have a match go into overtime.",
       "statName":"###medal_strings.pvp_match_overtime###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_match_overtime###",
       "unitType":1,
@@ -1349,6 +1427,8 @@
          25
       ],
       "category":10,
+      "name":"Never In Doubt",
+      "description":"Win a match without ever falling behind in round advantage.",
       "statName":"###medal_strings.pvp_match_never_trailed###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_match_never_trailed###",
       "unitType":1,
@@ -1382,6 +1462,8 @@
          25
       ],
       "category":10,
+      "name":"Fight Me!",
+      "description":"Achieve the most damage in an entire match.",
       "statName":"###medal_strings.pvp_match_most_damage###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_match_most_damage###",
       "unitType":1,
@@ -1415,6 +1497,8 @@
          25
       ],
       "category":10,
+      "name":"Comeback",
+      "description":"Win a match after being down multiple rounds or in points.",
       "statName":"###medal_strings.pvp_match_comeback###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_match_comeback###",
       "unitType":1,
@@ -1448,6 +1532,8 @@
          25
       ],
       "category":10,
+      "name":"Crushed Them",
+      "description":"Win a match by multiple rounds or a large lead.",
       "statName":"###medal_strings.pvp_match_blowout###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_match_blowout###",
       "unitType":1,
@@ -1481,6 +1567,8 @@
          25
       ],
       "category":10,
+      "name":"Not On My Watch",
+      "description":"Successfully defend a control zone",
       "statName":"###medal_strings.pvp_defense###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_defense###",
       "unitType":1,
@@ -1513,6 +1601,8 @@
          15,
          25
       ],
+      "name":"Rift Breaker",
+      "description":"Defeated a warlock during or shortly after using rift.",
       "category":10,
       "statName":"###medal_strings.pvp_defeat_warlock_sigil###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_defeat_warlock_sigil###",
@@ -1547,6 +1637,8 @@
          25
       ],
       "category":10,
+      "name":"Barricade Breaker",
+      "description":"Defeated a Titan and their barricade.",
       "statName":"###medal_strings.pvp_defeat_titan_brace###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_defeat_titan_brace###",
       "unitType":1,
@@ -1580,6 +1672,8 @@
          25
       ],
       "category":10,
+      "name":"Dodge This",
+      "description":"Defeat a hunter during or shortly after using dodge.",
       "statName":"###medal_strings.pvp_defeat_hunter_dodge###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_defeat_hunter_dodge###",
       "unitType":1,
@@ -1613,6 +1707,8 @@
          25
       ],
       "category":10,
+      "name":"The Cycle",
+      "description":"Successfully finish a round with at least 1 primary, special, heavy, grenade, melee and super kill.",
       "statName":"###medal_strings.pvp_cycle###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_cycle###",
       "unitType":1,
@@ -1646,6 +1742,8 @@
          25
       ],
       "category":10,
+      "name":"Gangs All Here",
+      "description":"Your entire team survived a round.",
       "statName":"###medal_strings.pvp_countdown_round_all_alive###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_countdown_round_all_alive###",
       "unitType":1,
@@ -1679,6 +1777,8 @@
          25
       ],
       "category":10,
+      "name":"Countdown Perfect",
+      "description":"Win an entire match of Countdown without losing a round.",
       "statName":"###medal_strings.pvp_countdown_perfect###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_countdown_perfect###",
       "unitType":1,
@@ -1712,6 +1812,8 @@
          25
       ],
       "category":10,
+      "name":"Detonated",
+      "description":"Have the bomb in countdown detonate.",
       "statName":"###medal_strings.pvp_countdown_detonated###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_countdown_detonated###",
       "unitType":1,
@@ -1745,6 +1847,8 @@
          25
       ],
       "category":10,
+      "name":"Countdown Defuse",
+      "description":"Defuse a bomb in countdown.",
       "statName":"###medal_strings.pvp_countdown_defused_multi###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_countdown_defused_multi###",
       "unitType":1,
@@ -1778,6 +1882,8 @@
          25
       ],
       "category":10,
+      "name":"Last Stand",
+      "description":"Defuse a bomb as the only surviving member of your team.",
       "statName":"###medal_strings.pvp_countdown_defused_last_stand###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_countdown_defused_last_stand###",
       "unitType":1,
@@ -1811,6 +1917,8 @@
          25
       ],
       "category":10,
+      "name":"Countdown Defense",
+      "description":"Win a round of countdown on defense.",
       "statName":"###medal_strings.pvp_countdown_defense###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_countdown_defense###",
       "unitType":1,
@@ -1843,6 +1951,8 @@
          25
       ],
       "category":10,
+      "name":"Power Overwhelming",
+      "description":"Make a power play in countdown.",
       "statName":"###medal_strings.pvp_control_power_play_wipe###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_control_power_play_wipe###",
       "unitType":1,
@@ -1876,6 +1986,8 @@
          25
       ],
       "category":10,
+      "name":"Control Perimeter Kill",
+      "description":"Eliminate an opponent in the perimeter of a zone.",
       "statName":"###medal_strings.pvp_control_perimeter_kill###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_control_perimeter_kill###",
       "unitType":1,
@@ -1908,6 +2020,8 @@
          25
       ],
       "category":10,
+      "name":"Flag Bearer",
+      "description":"Secure the most control zones during a match.",
       "statName":"###medal_strings.pvp_control_most_advantage###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_control_most_advantage###",
       "unitType":1,
@@ -1941,6 +2055,8 @@
          25
       ],
       "category":10,
+      "name":"Complete Control",
+      "description":"Capture all zones during a match of control.",
       "statName":"###medal_strings.pvp_control_capture_all_zones###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_control_capture_all_zones###",
       "unitType":1,
@@ -1973,6 +2089,8 @@
          25
       ],
       "category":10,
+      "name":"Dominant Advantage",
+      "description":"Get a score streak while holding the majority of zones in control.",
       "statName":"###medal_strings.pvp_control_advantage_streak###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_control_advantage_streak###",
       "unitType":1,
@@ -2006,6 +2124,8 @@
          25
       ],
       "category":10,
+      "name":"I Live Here Now",
+      "description":"Defend a zone multiple times.",
       "statName":"###medal_strings.pvp_control_advantage_hold###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_control_advantage_hold###",
       "unitType":1,
@@ -2039,6 +2159,8 @@
          25
       ],
       "category":10,
+      "name":"Blood for Blood",
+      "description":"Eliminate an opponent who recently eliminated a teammate.",
       "statName":"###medal_strings.pvp_avenger###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_avenger###",
       "unitType":1,
@@ -2072,6 +2194,8 @@
          25
       ],
       "category":15,
+      "name":"The Void",
+      "description":"Eliminate an opponent with a Warlock void bomb.",
       "statName":"###medal_strings.pvp_ability_voidwalker_vortex###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_voidwalker_vortex###",
       "unitType":1,
@@ -2105,6 +2229,8 @@
          25
       ],
       "category":15,
+      "name":"Lance",
+      "description":"Eliminate an enemy at a long distance with a Voidwalker bomb.",
       "statName":"###medal_strings.pvp_ability_voidwalker_distance###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_voidwalker_distance###",
       "unitType":1,
@@ -2138,6 +2264,8 @@
          25
       ],
       "category":15,
+      "name":"Everything Looks Like A Nail",
+      "description":"Earn a multi-elimination with the Hammer of Sol.",
       "statName":"###medal_strings.pvp_ability_sunbreaker_multi###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_sunbreaker_multi###",
       "unitType":1,
@@ -2171,6 +2299,8 @@
          25
       ],
       "category":15,
+      "name":"Pitch Perfect",
+      "description":"Eliminate an enemy player from a long distance using Hammer of Sol.",
       "statName":"###medal_strings.pvp_ability_sunbreaker_long_range###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_sunbreaker_long_range###",
       "unitType":1,
@@ -2204,6 +2334,8 @@
          25
       ],
       "category":15,
+      "name":"Lightning Storm",
+      "description":"Eliminate multiple opponents using Stormtrance.",
       "statName":"###medal_strings.pvp_ability_stormcaller_multi###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_stormcaller_multi###",
       "unitType":1,
@@ -2237,6 +2369,8 @@
          25
       ],
       "category":15,
+      "name":"Landfall",
+      "description":"Eliminate an enemy from the initial shockwave of casting StormTrance.",
       "statName":"###medal_strings.pvp_ability_stormcaller_landfall###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_stormcaller_landfall###",
       "unitType":1,
@@ -2270,6 +2404,8 @@
          25
       ],
       "category":15,
+      "name":"Sentinel Ward",
+      "description":"Use the Sentinel Ward super.",
       "statName":"###medal_strings.pvp_ability_sentinel_ward###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_sentinel_ward###",
       "unitType":1,
@@ -2303,6 +2439,8 @@
          25
       ],
       "category":15,
+      "name":"Sentinel Shield Multikill",
+      "description":"Eliminate multiple opponents with a Sentinel shield.",
       "statName":"###medal_strings.pvp_ability_sentinel_combo###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_sentinel_combo###",
       "unitType":1,
@@ -2336,6 +2474,8 @@
          25
       ],
       "category":15,
+      "name":"Entangled",
+      "description":"Entangle an opponent in a Nightstalker Shadowshot.",
       "statName":"###medal_strings.pvp_ability_nightstalker_tether_quick###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_nightstalker_tether_quick###",
       "unitType":1,
@@ -2369,6 +2509,8 @@
          25
       ],
       "category":15,
+      "name":"Longshot",
+      "description":"Hit an opponent with Shadowshot from a long distance.",
       "statName":"###medal_strings.pvp_ability_nightstalker_long_range###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_nightstalker_long_range###",
       "unitType":1,
@@ -2402,6 +2544,8 @@
          25
       ],
       "category":15,
+      "name":"Juggernaut Slam",
+      "description":"Eliminate an opponent with Fists of Havoc.",
       "statName":"###medal_strings.pvp_ability_juggernaut_slam###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_juggernaut_slam###",
       "unitType":1,
@@ -2435,6 +2579,8 @@
          25
       ],
       "category":15,
+      "name":"Absolute Force",
+      "description":"Eliminate multiple opponents with Fists of Havoc.",
       "statName":"###medal_strings.pvp_ability_juggernaut_combo###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_juggernaut_combo###",
       "unitType":1,
@@ -2468,6 +2614,8 @@
          25
       ],
       "category":15,
+      "name":"Lethal Instinct",
+      "description":"Quickly eliminate an opponent after casting Golden Gun.",
       "statName":"###medal_strings.pvp_ability_gunslinger_quick###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_gunslinger_quick###",
       "unitType":1,
@@ -2501,6 +2649,8 @@
          25
       ],
       "category":15,
+      "name":"Handful of Bullets",
+      "description":"Eliminate multiple opponents with Golden Gun.",
       "statName":"###medal_strings.pvp_ability_gunslinger_multi###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_gunslinger_multi###",
       "unitType":1,
@@ -2534,6 +2684,8 @@
          25
       ],
       "category":15,
+      "name":"Lightning Strike",
+      "description":"Eliminate an opponent immediately after casting Arc Staff.",
       "statName":"###medal_strings.pvp_ability_flowwalker_quick###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_flowwalker_quick###",
       "unitType":1,
@@ -2567,6 +2719,8 @@
          25
       ],
       "category":15,
+      "name":"Hurricane",
+      "description":"Eliminate multiple enemies using Arc Staff.",
       "statName":"###medal_strings.pvp_ability_flowwalker_multi###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_flowwalker_multi###",
       "unitType":1,
@@ -2600,6 +2754,8 @@
          25
       ],
       "category":15,
+      "name":"Dawnblade Slam",
+      "description":"Eliminate an opponent with a dawnblade slam.",
       "statName":"###medal_strings.pvp_ability_dawnblade_slam###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_dawnblade_slam###",
       "unitType":1,
@@ -2633,6 +2789,8 @@
          25
       ],
       "category":15,
+      "name":"Defying Gravity",
+      "description":"Eliminate multiple opponents with Daybreak while airborne.",
       "statName":"###medal_strings.pvp_ability_dawnblade_aerial###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_ability_dawnblade_aerial###",
       "unitType":1,
