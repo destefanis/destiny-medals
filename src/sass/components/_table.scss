@@ -8,13 +8,12 @@
   padding-top: 1em;
   text-align: left;
   color: $blue;
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  font-weight: 500;
-  letter-spacing: 3px;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.025em;
 
   &.score-board__team--alpha {
-    color: #DA2C38;
+    color: #ea5d5d;
   }
 }
 
@@ -25,11 +24,12 @@
   line-height: 1;
   background: $blue;
   color: $white;
-  font-size: 24px;
-  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+  font-weight: 400;
 
   &.score-board__total--alpha {
-    background: #DA2C38;
+    background: #ea5d5d;
   }
 }
 

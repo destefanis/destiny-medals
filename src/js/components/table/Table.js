@@ -38,7 +38,7 @@ class Table extends React.Component {
           <span className="score-board__total score-board__total--alpha">
             {this.props.alphaScore}
           </span>
-          Alpha
+          Alpha Team
         </h3>
         <table className="table">
           <tbody>
@@ -67,7 +67,7 @@ class Table extends React.Component {
           <span className="score-board__total score-board__total--bravo">
             {this.props.bravoScore}
           </span>
-          Bravo
+          Bravo Team
         </h3>
         <table className="table">
           <tbody>

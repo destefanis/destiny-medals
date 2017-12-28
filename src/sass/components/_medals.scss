@@ -1,0 +1,39 @@
+// Medals component
+
+.medals {
+  padding: 20px;
+  text-align: left;
+}
+
+.medals-header {
+  padding: 10px; 
+  color: $blue-dark;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
+
+.medal {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.medal-icon {
+  height: auto;
+  width: 70px;
+}
+
+.medal-count {
+  position: absolute;
+  top: -9px;
+  right: -5px;
+  display: inline-block;
+  background: $aqua;
+  color: $white;
+  padding: 2px 9px 1px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: 300;
+}

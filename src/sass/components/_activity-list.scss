@@ -13,9 +13,77 @@
   border-radius: 8px;
 }
 
+.report-overview {
+  background-color: $grey;
+  padding: 10px 20px;
+}
+
+.report-title {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
+
+// .report-results {
+//   margin: 0 30px;
+// }
+
+// .team {
+//   width: 50%;
+//   display: inline-block;
+//   padding: 15px 25px;
+//   color: $white;
+//   border-bottom: 1px solid $blue;
+//   color: $blue;
+
+//   &.team--alpha {
+//     border-color: #ea5d5d;
+//     color: #ea5d5d;
+//   }
+// }
+
+.team {
+  position: relative;
+  display: inline-block;
+  padding: 17px 25px;
+  color: $blue;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: 6px;
+    width: 6px;
+    background: $red;
+  }
+
+  &.team--alpha {
+    color: #ea5d5d;
+  }
+}
+
+.team-name {
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.score-divider {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+// .team-score {
+
+// }
+
 .activity-report {
   position: relative;
-  background: #f9f9f9;
+  background: $white;
   margin-top: -5px;
   color: $blue-dark;
 }
@@ -90,7 +158,7 @@
   // background: $white;
   // padding: 3px 12px 0;
   margin-top: 0;
-  margin-bottom: 0.25em;
+  margin-bottom: 0;
   letter-spacing: 0.025em;
   font-weight: 400;
   font-size: 2.8rem;
