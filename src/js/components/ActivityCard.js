@@ -84,7 +84,6 @@ class ActivityCard extends React.Component {
           </div>
           <div className="activity-card__content">
             <span className="content-results">{this.props.condition}</span>
-            <span className="content-results">Kills: {this.props.kills}</span>
           </div>
         </div>
         {report}

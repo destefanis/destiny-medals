@@ -16,19 +16,6 @@ class ActivityReport extends React.Component {
       <div className="activity-report">
         <div className="report-overview">
           <h4 className="report-title">Post Game Report</h4>
-          <div className="team team--alpha {report.teams[0].standing.basic.displayValue}">
-            <span className="team-score">
-              { report.teams[0].score.basic.displayValue }
-            </span>
-          </div>
-          <span className="score-divider">
-            to
-          </span>
-          <div className="team team--bravo {report.teams[1].standing.basic.displayValue}">
-            <span className="team-score">
-              { report.teams[1].score.basic.displayValue }
-            </span>
-          </div>
         </div>
         <div className="report-scoreboard">
           <Table data={report.entries} 
