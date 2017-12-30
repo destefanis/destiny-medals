@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Table from './table/Table.js';
+import PlayerPerformance from './PlayerPerformance.js';
 import MedalsList from './MedalsList.js';
 
 class ActivityReport extends React.Component {
@@ -23,6 +24,7 @@ class ActivityReport extends React.Component {
             bravoScore={report.teams[1].score.basic.displayValue}
           />
         </div>
+        <PlayerPerformance player={report.entries[0]} />
         <MedalsList player={report.entries[0]}/>
       </div>
     )

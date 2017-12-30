@@ -1,0 +1,32 @@
+// Performance Metrics
+
+.report-performance {
+  flex-flow: row wrap;
+  display: flex;
+  padding: 20px;
+}
+
+.performance-metric {
+  flex: 1 1 30%;
+  margin: 5px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  background-color: $white;
+  color: $white;
+  text-align: left;
+  background: linear-gradient(90deg, #528dd1, #606cd2);
+}
+
+.metric-title {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  letter-spacing: 0.025em;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.metric-value {
+  font-weight: 300;
+  font-size: 3rem;
+}
