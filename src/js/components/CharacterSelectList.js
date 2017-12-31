@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import Transition from 'react-transition-group/Transition';
+import queryString from 'query-string';
 
 import CharacterCard from './CharacterCard';
 
@@ -12,7 +13,14 @@ class CharacterSelectList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.fetchActivity = this.fetchActivity.bind(this);
+    this.state = {
+      characters: [],
+      membershipId: this.props.membershipId,
+    };
+
+    this.fetchCharacterData = this.fetchCharacterData.bind(this);
+    this.characterSelected = this.characterSelected.bind(this);
+    this.updateCharacterList = this.updateCharacterList.bind(this);
   }
 
   determineClass(classID) {
@@ -33,31 +41,85 @@ class CharacterSelectList extends React.Component {
     return (newPath);
   }
 
-  fetchActivity(characterId) {
-    let endpoint = host + '4/Account/' + this.props.membershipId + '/Character/' + characterId + '/Stats/Activities/?mode=5';
+  updateCharacterList(newCharacterData, membershipId) {
+    this.setState({
+      characters: [...this.state.characters, newCharacterData],
+      membershipId: membershipId
+    });
+
+    this.props.onCharacterListChange(newCharacterData);
+  }
+
+  fetchCharacterData(platform, membershipId) {
+    // Request the characters the belong to player.
+    let endpoint = host + platform + '/Profile/' + membershipId + '/?components=100';
     let request = new Request(endpoint, requestHeader);
 
-    // Fetch the players recent activity.
     fetch(request)
       .then(response => response.json())
       .then(data => {
-        this.props.onActivityHistoryUpdate(data.Response.activities);
-        this.props.history.push('/character/activity/');
+        let characterIds = data.Response.profile.data.characterIds;
+
+        // Request character data for each character.
+        for (let characterId of characterIds) {
+
+          endpoint = host + platform + '/Profile/' + membershipId + '/Character/' + characterId + '/?components=200';
+          let characterRequest = new Request(endpoint, requestHeader);
+
+          fetch(characterRequest)
+            .then(response => response.json())
+            .then(data => {
+              // Updated local state in order to map the characters array.
+              this.updateCharacterList(data.Response.character.data, membershipId);
+            })
+        }
       })
       .catch(function(error) { 
         console.log('Requestfailed', error) 
       });
   }
 
+  characterSelected(characterId) {
+    this.props.onCharacterSelected(characterId);
+
+    // Update the router path with querys we can use
+    // to re-request the information on reload.
+    let selectedPlatform = '?platform=4';
+    let characterQuery = '&characterId=' + characterId;
+    let membershipQuery = '&membershipId=' + this.state.membershipId;
+    let routerQuery = selectedPlatform + membershipQuery + characterQuery;
+
+    this.props.history.push({
+      pathname: '/character/activity',
+      search: routerQuery
+    })
+  }
+
+  componentDidMount(props) {
+    let membershipId = this.state.membershipId;
+
+    // If the user reloads or visits this page with a copied address,
+    // then use the query parameters for our requests.
+    if (this.props.membershipId === '') {
+      let parsed = queryString.parse(this.props.location.search);
+      membershipId = parsed.membershipId;
+      this.fetchCharacterData(parsed.platform, parsed.membershipId);
+    } else {
+      this.fetchCharacterData('4', this.props.membershipId);
+    }
+  }
+
   render() {
-    let characterCards = this.props.characterData.map((character) => {
+    let characterData = this.state.characters;
+
+    let characterCards = characterData.map((character) => {
       return <CharacterCard 
               background={this.addImagePath(character.emblemBackgroundPath)}
               emblem={this.addImagePath(character.emblemPath)}
               class={this.determineClass(character.classType)}
               light={character.light}
               level={character.baseCharacterLevel}
-              onCharacterSelect={this.fetchActivity}
+              onCharacterSelect={this.characterSelected}
               character={character.characterId}
               key={character.characterId} />
     });

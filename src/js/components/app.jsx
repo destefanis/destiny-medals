@@ -1,10 +1,12 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
+  HashRouter,
   Route,
   withRouter,
   Switch,
-  Link
+  Link,
+
 } from 'react-router-dom'
 
 // Component Imports
@@ -17,9 +19,9 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: 'test',
+      userName: '',
       userPlatform: '4',
-      membershipId: '1',
+      membershipId: '',
       characterData: [],
       activityHistory: [],
       characterId: '',
@@ -28,6 +30,7 @@ export class App extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMembershipChange = this.handleMembershipChange.bind(this);
     this.handleCharacterListChange = this.handleCharacterListChange.bind(this);
+    this.handleCharacterSelected = this.handleCharacterSelected.bind(this);
     this.handleActivityHistoryChange = this.handleActivityHistoryChange.bind(this);
   }
 
@@ -50,6 +53,12 @@ export class App extends React.Component {
     });
   }
 
+  handleCharacterSelected(characterId) {
+    this.setState({
+      characterId: characterId
+    });
+  }
+
   handleActivityHistoryChange(activityHistory) {
     this.setState({
       activityHistory: [...this.state.activityHistory, activityHistory]
@@ -60,26 +69,30 @@ export class App extends React.Component {
     return (
       <div>
         <Navigation />
-        <Router>
+        <HashRouter>
           <section className="main">
             <Switch>
               <Route exact path="/" render={ () => 
                 <PlayerInfoForm 
-                  onCharacterListChange={this.handleCharacterListChange}
                   onMembershipChange={this.handleMembershipChange}
                   onHandleInputChange={this.handleInputChange}
                 /> 
               } />
-              <Route exact path="/character" render={ () => 
-                <CharacterSelectList 
+              <Route exact path="/characters" render={ () => 
+                <CharacterSelectList
+                  onCharacterListChange={this.handleCharacterListChange}
                   membershipId={this.state.membershipId}
-                  characterData={this.state.characterData}
-                  onActivityHistoryUpdate={this.handleActivityHistoryChange} /> 
+                  onCharacterSelected={this.handleCharacterSelected} /> 
                 } />
-              <Route path="/character/activity" render={ () => <ActivityList activityHistoryData={this.state.activityHistory} /> } />
+              <Route path="/character/activity" render={ () => 
+                <ActivityList 
+                  characterId={this.state.characterId} 
+                  membershipId={this.state.membershipId} 
+                  onActivityHistoryUpdate={this.handleActivityHistoryChange} /> 
+              } />
             </Switch>
           </section>
-        </Router>
+        </HashRouter>
       </div>
     )
   }

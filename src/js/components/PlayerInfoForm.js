@@ -43,30 +43,18 @@ class PlayerInfoForm extends React.Component {
         membershipId = data.Response[0].membershipId;
         // Update the parent state value.
         this.props.onMembershipChange(membershipId);
-        // Update the endpoint to request the users profile.
-        endpoint = host + '4/Profile/' + membershipId + '/?components=100';
-        let userRequest = new Request(endpoint, requestHeader);
 
-        return fetch(userRequest)
-      })
-      .then(response => response.json())
-      .then(data => {
-  
-        let characterIds = data.Response.profile.data.characterIds;
+        // Update the router path with querys we can use
+        // to re-request the information on reload.
+        let selectedPlatform = '?platform=4';
+        let membershipQuery = '&membershipId=' + membershipId;
+        let routerQuery = selectedPlatform + membershipQuery;
 
-        // Request character info for each character.
-        for (let characterId of data.Response.profile.data.characterIds) {
-          endpoint = host + '4/Profile/' + membershipId + '/Character/' + characterId + '/?components=200';
-          let characterRequest = new Request(endpoint, requestHeader);
-
-          fetch(characterRequest)
-            .then(response => response.json())
-            .then(data => {
-              this.props.onCharacterListChange(data.Response.character.data);
-            })
-        }
-
-        this.props.history.push('/character');
+        this.props.history.push({
+          pathname: '/characters',
+          search: routerQuery,
+          state: { name: this.state.value }
+        })
       })
       .catch(function(error) { 
         console.log('Requestfailed', error) 

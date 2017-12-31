@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "moment": "^2.20.1",
+    "query-string": "^5.0.1",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
     "sql.js": "^0.4.0"
