@@ -106,6 +106,7 @@ class ActivityList extends React.Component {
               condition={activity.values.standing.basic.displayValue}
               date={this.parseDate(activity.period)}
               instanceId={activity.activityDetails.instanceId}
+              characterId={this.state.characterId}
               key={index} />
     });
 

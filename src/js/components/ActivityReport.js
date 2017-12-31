@@ -7,6 +7,14 @@ import MedalsList from './MedalsList.js';
 class ActivityReport extends React.Component {
   constructor(props) {
     super(props);
+
+    this.findPlayer = this.findPlayer.bind(this);
+  }
+
+  findPlayer(characterId, array) {
+    let player = array.find(player => player.characterId === characterId);
+    console.log(player);
+    return(player);
   }
 
   render() {
@@ -24,8 +32,8 @@ class ActivityReport extends React.Component {
             bravoScore={report.teams[1].score.basic.displayValue}
           />
         </div>
-        <PlayerPerformance player={report.entries[0]} />
-        <MedalsList player={report.entries[0]}/>
+        <PlayerPerformance player={this.findPlayer(this.props.characterId, report.entries)} />
+        <MedalsList player={this.findPlayer(this.props.characterId, report.entries)}/>
       </div>
     )
   }

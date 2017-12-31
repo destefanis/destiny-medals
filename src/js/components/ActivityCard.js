@@ -19,7 +19,7 @@ class ActivityCard extends React.Component {
     this.toggleActive = this.toggleActive.bind(this);
   }
 
-  // Toggle Open the report and make a request if it's the first time.
+  // Toggle Open the report and make a request.
   toggleActive(instanceId) {
     let endpoint = host + 'Stats/PostGameCarnageReport/' + instanceId + '/';
     let request = new Request(endpoint, requestHeader);
@@ -60,7 +60,7 @@ class ActivityCard extends React.Component {
 
     // Conditionally render the activity report.
     if (isActive) {
-      report = <ActivityReport report={this.state.report} />;
+      report = <ActivityReport report={this.state.report} characterId={this.props.characterId} />;
     } else {
       report = null;
     }
