@@ -67,9 +67,9 @@ export class App extends React.Component {
 
   render () {
     return (
-      <div>
-        <Navigation />
-        <HashRouter>
+      <HashRouter>
+          <div>
+          <Navigation />
           <section className="main">
             <Switch>
               <Route exact path="/" render={ () => 
@@ -92,8 +92,8 @@ export class App extends React.Component {
               } />
             </Switch>
           </section>
-        </HashRouter>
-      </div>
+        </div>
+      </HashRouter>
     )
   }
 }

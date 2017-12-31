@@ -1,0 +1,19 @@
+// Classes for swipe.js library.
+
+.swipe {
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.swipe-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.swipe-item {
+  float: left;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}

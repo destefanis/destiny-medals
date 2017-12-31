@@ -68,6 +68,7 @@ class ActivityList extends React.Component {
       .then(data => {
         this.props.onActivityHistoryUpdate(data.Response.activities);
         this.setState({
+          characterId: characterId,
           activityHistoryData: [...this.state.activityHistoryData, data.Response.activities]
         });
       })
@@ -93,7 +94,6 @@ class ActivityList extends React.Component {
     let listSize = 30;
     let activityHistory = this.state.activityHistoryData;
     var merged = [].concat.apply([], activityHistory);
-    console.log(merged);
 
     let activities = merged.slice(0, listSize).map((activity, index) => {
       console.log(activity);

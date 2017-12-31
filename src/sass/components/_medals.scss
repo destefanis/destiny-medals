@@ -1,16 +1,14 @@
 // Medals component
 
 .medals {
-  padding: 20px;
+  padding: 10px 20px;
+  background: $grey;
   text-align: left;
 }
 
-.medals-header {
-  padding: 10px; 
-  color: $blue-dark;
-  font-size: 2.2rem;
-  font-weight: 400;
-  letter-spacing: 0.025em;
+.medals-earned {
+  padding-top: 10px;
+  margin: 0 -10px;
 }
 
 .medal {
@@ -20,9 +18,16 @@
   padding: 0;
 }
 
+.medal-icon-wrapper {
+  overflow: hidden;
+  width: 90px;
+  margin: 0;
+  text-align: center;
+}
+
 .medal-icon {
   height: auto;
-  width: 90px;
+  width: 110%;
 }
 
 .medal-count {

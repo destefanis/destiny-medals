@@ -8,37 +8,43 @@ class PlayerPerformance extends React.Component {
 
   render() {
     const player = this.props.player;
+    console.log(player);
     const values = this.props.player.values;
 
     return (
       <div className="report-performance">
-        <div className="performance-metric">
-          <h6 className="metric-title">Score</h6>
-          <p className="metric-value">{values.score.basic.displayValue}</p>
-        </div>
-        <div className="performance-metric">
-          <h6 className="metric-title">Opp. Defeated</h6>
-          <p className="metric-value">{values.opponentsDefeated.basic.displayValue}</p>
-        </div>
-        <div className="performance-metric">
-          <h6 className="metric-title">Kills</h6>
-          <p className="metric-value">{values.kills.basic.displayValue}</p>
-        </div>
-        <div className="performance-metric">
-          <h6 className="metric-title">Assists</h6>
-          <p className="metric-value">{values.assists.basic.displayValue}</p>
-        </div>
-        <div className="performance-metric">
-          <h6 className="metric-title">Deaths</h6>
-          <p className="metric-value">{values.deaths.basic.displayValue}</p>
-        </div>
-        <div className="performance-metric">
-          <h6 className="metric-title">KDA</h6>
-          <p className="metric-value">{values.killsDeathsAssists.basic.displayValue}</p>
-        </div>
-        <div className="performance-metric">
-          <h6 className="metric-title">KD:</h6>
-          <p className="metric-value">{values.killsDeathsRatio.basic.displayValue}</p>
+        <h2 className="performance-title">
+          {player.player.destinyUserInfo.displayName}s Performance
+        </h2>
+        <div className="metrics-wrapper">
+          <div className="performance-metric">
+            <h6 className="metric-title">Opp. Defeated</h6>
+            <p className="metric-value">{values.opponentsDefeated.basic.displayValue}</p>
+          </div>
+          <div className="performance-metric">
+            <h6 className="metric-title">Kills</h6>
+            <p className="metric-value">{values.kills.basic.displayValue}</p>
+          </div>
+          <div className="performance-metric">
+            <h6 className="metric-title">Assists</h6>
+            <p className="metric-value">{values.assists.basic.displayValue}</p>
+          </div>
+          <div className="performance-metric">
+            <h6 className="metric-title">Deaths</h6>
+            <p className="metric-value">{values.deaths.basic.displayValue}</p>
+          </div>
+          <div className="performance-metric">
+            <h6 className="metric-title">KDA</h6>
+            <p className="metric-value">{values.killsDeathsAssists.basic.displayValue}</p>
+          </div>
+          <div className="performance-metric">
+            <h6 className="metric-title">KD:</h6>
+            <p className="metric-value">{values.killsDeathsRatio.basic.displayValue}</p>
+          </div>
+          <div className="performance-metric">
+            <h6 className="metric-title">Score</h6>
+            <p className="metric-value">{values.score.basic.displayValue}</p>
+          </div>
         </div>
       </div>
     )

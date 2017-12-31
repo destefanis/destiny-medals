@@ -1,9 +1,28 @@
 .report-scoreboard {
-  padding: 0 20px 20px;
+  padding: 20px;
   background: $white;
 }
 
+.team-name {
+  flex: 0 0 auto;
+}
+
+.score-divider {
+  flex: 0 0 5%;
+  height: 2px;
+  margin: auto 15px;
+  background: $blue;
+
+  &.score-divider--alpha {
+    background: $red;
+  }
+}
+
 .score-board__team {
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: flex-start;
   margin-bottom: 0.5em;
   padding-top: 1em;
   text-align: left;
@@ -13,28 +32,25 @@
   letter-spacing: 0.025em;
 
   &.score-board__team--alpha {
-    color: #ea5d5d;
+    color: $red;
   }
 }
 
 .score-board__total {
-  display: inline-block;
-  margin-right: 15px;
-  padding: 14px 15px 12px;
-  line-height: 1;
-  background: $blue;
-  color: $white;
+  flex: 0 0 auto;
+  color: $blue;
   letter-spacing: 1px;
   font-size: 2.2rem;
   font-weight: 400;
 
   &.score-board__total--alpha {
-    background: #ea5d5d;
+    color: $red;
   }
 }
 
 .table {
   width: 100%;
+  margin-bottom: 2em;
   text-align: center;
   border-collapse: collapse;
   table-layout: fixed;
@@ -44,11 +60,14 @@
 
 .table-header {
   padding: 5px;
+  padding-right: 0;
   border-bottom: 1px solid $blue-dark;
   text-align: right;
   font-weight: 400;
 
   &:first-of-type {
+    padding-right: 5px;
+    padding-left: 0;
     text-align: left;
   }
 }
@@ -63,9 +82,12 @@
 
 .table-column {
   padding: 5px;
+  padding-right: 0;
   text-align: right;
 
   &:first-of-type {
+    padding-right: 5px;
+    padding-left: 0;
     text-align: left;
   }
 }

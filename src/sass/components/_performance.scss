@@ -1,20 +1,35 @@
 // Performance Metrics
 
+.performance-title {
+  padding: 1em 0 0.5em;
+  color: $black;
+  text-align: left;
+  letter-spacing: 0.025em;
+  font-size: 2.2rem;
+  font-size: 500;
+}
+
 .report-performance {
-  flex-flow: row wrap;
-  display: flex;
   padding: 20px;
 }
 
+.metrics-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -5px;
+}
+
 .performance-metric {
-  flex: 1 1 30%;
+  flex: 1 1 auto;
+  flex-basis: calc(33.33% - 10px);
   margin: 5px;
   padding: 8px 20px;
   border-radius: 10px;
   background-color: $white;
-  color: $white;
+  color: $black;
   text-align: left;
-  background: linear-gradient(90deg, #528dd1, #606cd2);
+  background-color: $grey;
+  // background: linear-gradient(90deg, #528dd1, #606cd2);
 }
 
 .metric-title {

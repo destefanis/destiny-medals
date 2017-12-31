@@ -42,7 +42,9 @@ class MedalsList extends React.Component {
 
     const medal = medalValues.map((medal, index) =>
       <div className="medal" key={index} data-tip={this.findMedalData(medal)}>
-        <img className="medal-icon" key={index} src={this.findMedalImage(medal)} />
+        <figure className="medal-icon-wrapper">
+          <img className="medal-icon" key={index} src={this.findMedalImage(medal)} />
+        </figure>
         <span className="medal-count">
           {this.findMedalCount(medal)}
         </span>
@@ -51,13 +53,18 @@ class MedalsList extends React.Component {
 
     return (
       <div className="medals">
-        <h3 className="medals-header">
-          Medals Earned {player.extended.values.allMedalsEarned.basic.displayValue}
-        </h3>
+        <header className="score-board__team">
+          <h3 className="team-name">Medals Earned</h3>
+          <span className="score-divider">
+          </span>
+          <span className="score-board__total">
+            {player.extended.values.allMedalsEarned.basic.displayValue}
+          </span>
+        </header>
         <div className="medals-earned">
           {medal}
         </div>
-        <ReactTooltip data-event="mouseenter click" className="tooltip" effect="solid" html={true} />
+        <ReactTooltip data-event="mouseenter click" className="tooltip" place="right" effect="float" html={true} />
       </div>
     )
   }

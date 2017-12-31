@@ -34,12 +34,14 @@ class Table extends React.Component {
 
     return (
       <div>
-        <h3 className="score-board__team score-board__team--alpha">
+        <header className="score-board__team score-board__team--alpha">
+          <h3 className="team-name team-name--alpha">Alpha Team</h3>
+          <span className="score-divider score-divider--alpha">
+          </span>
           <span className="score-board__total score-board__total--alpha">
             {this.props.alphaScore}
           </span>
-          Alpha Team
-        </h3>
+        </header>
         <table className="table">
           <tbody>
             <tr>
@@ -63,12 +65,14 @@ class Table extends React.Component {
           </tbody>
         </table>
 
-        <h3 className="score-board__team">
+        <header className="score-board__team">
+          <h3 className="team-name">Bravo Team</h3>
+          <span className="score-divider">
+          </span>
           <span className="score-board__total score-board__total--bravo">
             {this.props.bravoScore}
           </span>
-          Bravo Team
-        </h3>
+        </header>
         <table className="table">
           <tbody>
             <tr>

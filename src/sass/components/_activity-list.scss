@@ -13,73 +13,54 @@
   border-radius: 10px;
 }
 
-.report-overview {
-  background-color: $grey;
-  padding: 10px 20px;
+.report-nav {
+  padding: 0 20px;
+  text-align: left;
+  // border-bottom: 1px solid $grey;
 }
 
-.report-title {
-  display: inline-block;
-  margin-right: 20px;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.025em;
-}
-
-// .report-results {
-//   margin: 0 30px;
-// }
-
-// .team {
-//   width: 50%;
-//   display: inline-block;
-//   padding: 15px 25px;
-//   color: $white;
-//   border-bottom: 1px solid $blue;
-//   color: $blue;
-
-//   &.team--alpha {
-//     border-color: #ea5d5d;
-//     color: #ea5d5d;
-//   }
-// }
-
-.team {
+.report-nav__item {
   position: relative;
   display: inline-block;
-  // padding: 17px 25px;
-  color: $blue;
+  text-align: center;
+  margin-right: 35px;
+  padding: 25px 0 10px;
+  color: rgba($black, 0.6);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  opacity: 1;
+  transition: all 200ms ease;
 
-  &::after {
+  &::after,
+  &::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    height: 6px;
-    width: 6px;
-    background: $red;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: $grey;
+    z-index: 1;
   }
 
-  &.team--alpha {
-    color: #ea5d5d;
+  &::before {
+    z-index: 10;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: $aqua-dark;
+    transition: all 200ms ease-in;
+  }
+
+  &.is-active {
+    opacity: 1;
+    color: $aqua-dark;
+
+    &::before {
+      transform: scaleX(1);
+    }
   }
 }
-
-.team-name {
-  font-weight: 400;
-  letter-spacing: 1px;
-}
-
-.score-divider {
-  display: inline-block;
-  margin: 0 15px;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-}
-
-// .team-score {
-
-// }
 
 .activity-report {
   position: relative;
