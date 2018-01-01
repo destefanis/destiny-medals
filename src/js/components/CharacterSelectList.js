@@ -16,6 +16,7 @@ class CharacterSelectList extends React.Component {
     this.state = {
       characters: [],
       membershipId: this.props.membershipId,
+      platform: this.props.platform,
     };
 
     this.fetchCharacterData = this.fetchCharacterData.bind(this);
@@ -41,10 +42,11 @@ class CharacterSelectList extends React.Component {
     return (newPath);
   }
 
-  updateCharacterList(newCharacterData, membershipId) {
+  updateCharacterList(newCharacterData, membershipId, platform) {
     this.setState({
       characters: [...this.state.characters, newCharacterData],
-      membershipId: membershipId
+      membershipId: membershipId,
+      platform: platform,
     });
 
     this.props.onCharacterListChange(newCharacterData);
@@ -70,7 +72,7 @@ class CharacterSelectList extends React.Component {
             .then(response => response.json())
             .then(data => {
               // Updated local state in order to map the characters array.
-              this.updateCharacterList(data.Response.character.data, membershipId);
+              this.updateCharacterList(data.Response.character.data, membershipId, platform);
             })
         }
       })
@@ -84,7 +86,7 @@ class CharacterSelectList extends React.Component {
 
     // Update the router path with querys we can use
     // to re-request the information on reload.
-    let selectedPlatform = '?platform=4';
+    let selectedPlatform = '?platform=' + this.state.platform;
     let characterQuery = '&characterId=' + characterId;
     let membershipQuery = '&membershipId=' + this.state.membershipId;
     let routerQuery = selectedPlatform + membershipQuery + characterQuery;
@@ -105,7 +107,7 @@ class CharacterSelectList extends React.Component {
       membershipId = parsed.membershipId;
       this.fetchCharacterData(parsed.platform, parsed.membershipId);
     } else {
-      this.fetchCharacterData('4', this.props.membershipId);
+      this.fetchCharacterData(this.props.platform, this.props.membershipId);
     }
   }
 

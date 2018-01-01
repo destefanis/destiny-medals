@@ -3,14 +3,12 @@ import React from 'react';
 class Table extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.data);
   }
 
   render() {
     // @todo split into subcomponent
     const alphaTeam = this.props.data.filter(player => player.standing === 0);
     const bravoTeam = this.props.data.filter(player => player.standing === 1);
-
 
     const alphaTableRow = alphaTeam.map((player) =>
       <tr className="table-row" key={player.player.destinyUserInfo.displayName}>

@@ -11,10 +11,18 @@ class PlayerInfoForm extends React.Component {
     super(props);
 
     // Set local state so we can update this value for form submission.
-    this.state = {value: ''};
+    this.state = {
+      value: '',
+      platform: this.props.defaultPlatform,
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePlatformChange = this.handlePlatformChange.bind(this);
+  }
+
+  handlePlatformChange(selectedPlatform) {
+    this.setState({platform: selectedPlatform});
   }
 
   handleChange(e) {
@@ -29,9 +37,12 @@ class PlayerInfoForm extends React.Component {
 
     // Update the state in the parent based on this components local state.
     this.props.onHandleInputChange(this.state.value);
+    this.props.onPlatformSelect(this.state.platform);
 
     let playerName = encodeURIComponent(this.state.value);
-    let endpoint = host + 'SearchDestinyPlayer/4/' + playerName + '/';
+    let playerPlatform = this.state.platform;
+    let endpoint = host + 'SearchDestinyPlayer/' + playerPlatform + '/' + playerName + '/';
+
     let request = new Request(endpoint, requestHeader);
     let membershipId;
 
@@ -41,12 +52,13 @@ class PlayerInfoForm extends React.Component {
       .then(data => {
 
         membershipId = data.Response[0].membershipId;
+
         // Update the parent state value.
         this.props.onMembershipChange(membershipId);
 
         // Update the router path with querys we can use
         // to re-request the information on reload.
-        let selectedPlatform = '?platform=4';
+        let selectedPlatform = '?platform=' + playerPlatform;
         let membershipQuery = '&membershipId=' + membershipId;
         let routerQuery = selectedPlatform + membershipQuery;
 
@@ -64,7 +76,7 @@ class PlayerInfoForm extends React.Component {
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
-        <PlatformSelect />
+        <PlatformSelect onPlatformSelected={this.handlePlatformChange}/>
         <input className="form-input" type="text" placeholder="YourName#1377" value={this.state.value} onChange={this.handleChange} />
         <div className="button-wrapper">
           <button className="button" type="submit">Search</button>

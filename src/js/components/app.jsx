@@ -20,7 +20,7 @@ export class App extends React.Component {
     super(props);
     this.state = {
       userName: '',
-      userPlatform: '4',
+      platform: 4,
       membershipId: '',
       characterData: [],
       activityHistory: [],
@@ -28,6 +28,7 @@ export class App extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handlePlatformSelect = this.handlePlatformSelect.bind(this);
     this.handleMembershipChange = this.handleMembershipChange.bind(this);
     this.handleCharacterListChange = this.handleCharacterListChange.bind(this);
     this.handleCharacterSelected = this.handleCharacterSelected.bind(this);
@@ -39,6 +40,13 @@ export class App extends React.Component {
     this.setState({
       userName: userName
     });
+  }
+
+  handlePlatformSelect(platform) {
+    this.setState({
+      platform: platform
+    });
+    console.log(platform);
   }
 
   handleMembershipChange(membershipId) {
@@ -74,18 +82,22 @@ export class App extends React.Component {
             <Switch>
               <Route exact path="/" render={ () => 
                 <PlayerInfoForm 
+                  onPlatformSelect={this.handlePlatformSelect}
+                  defaultPlatform={this.state.platform}
                   onMembershipChange={this.handleMembershipChange}
                   onHandleInputChange={this.handleInputChange}
                 /> 
               } />
               <Route exact path="/characters" render={ () => 
                 <CharacterSelectList
+                  platform={this.state.platform}
                   onCharacterListChange={this.handleCharacterListChange}
                   membershipId={this.state.membershipId}
                   onCharacterSelected={this.handleCharacterSelected} /> 
                 } />
               <Route path="/character/activity" render={ () => 
                 <ActivityList 
+                  platform={this.state.platform}
                   characterId={this.state.characterId} 
                   membershipId={this.state.membershipId} 
                   onActivityHistoryUpdate={this.handleActivityHistoryChange} /> 

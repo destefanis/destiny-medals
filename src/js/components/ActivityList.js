@@ -19,6 +19,7 @@ class ActivityList extends React.Component {
     this.state = {
       characterId: this.props.characterId,
       membershipId: this.props.membershipId,
+      platform: this.props.platform,
       activityHistoryData: [],
     };
 
@@ -69,6 +70,7 @@ class ActivityList extends React.Component {
         this.props.onActivityHistoryUpdate(data.Response.activities);
         this.setState({
           characterId: characterId,
+          platform: platform,
           activityHistoryData: [...this.state.activityHistoryData, data.Response.activities]
         });
       })
@@ -80,13 +82,14 @@ class ActivityList extends React.Component {
   componentDidMount(props) {
     let characterId = this.state.characterId;
     let membershipId = this.state.membershipId;
+    let platform = this.state.platform;
 
     if (this.props.membershipId === '') {
       let parsed = queryString.parse(this.props.location.search);
       membershipId = parsed.membershipId;
       this.fetchActivityHistory(parsed.platform, parsed.membershipId, parsed.characterId);
     } else {
-      this.fetchActivityHistory('4', membershipId, characterId);
+      this.fetchActivityHistory(platform, membershipId, characterId);
     }
   }
 

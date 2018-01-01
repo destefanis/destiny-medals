@@ -64,6 +64,7 @@ gulp.task('images', () => {
 const server = sync.create()
 const reload = sync.reload
 
+// Server directory settings.
 const options = {
   notify: false,
   server: {
