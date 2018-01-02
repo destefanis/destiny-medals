@@ -8,6 +8,10 @@
   height: 500px;
   width: 360px;
   margin: 0 auto;
+
+  &.view-container--short {
+    height: 380px;
+  }
 }
 
 .form {
@@ -34,7 +38,7 @@
   outline: none;
   width: 100%;
   padding: 25px 100px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.11);
   border-radius: 4px;
   border: none;
   background: $blue-dark;

@@ -127,7 +127,7 @@ class CharacterSelectList extends React.Component {
     });
 
     return (
-      <div className="view-container">
+      <div className="view-container view-container--short">
         <div className="character-select">
           <label className="form-label">
             Select Character

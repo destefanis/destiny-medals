@@ -83,7 +83,7 @@ class ActivityCard extends React.Component {
             <h2 className="card__title">{activityDefinition.displayProperties.name}</h2>
           </div>
           <div className="activity-card__content">
-            <span className="content-results">{this.props.condition}</span>
+            <span className="content-results">— {this.props.condition}</span>
           </div>
         </div>
         {report}

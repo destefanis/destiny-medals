@@ -1,7 +1,7 @@
 // Activity List and Card Styling
 
 .activity-list {
-  width: 600px;
+  max-width: 620px;
   margin: 2em auto;
   padding: 0 10px;
   text-align: center;
@@ -19,7 +19,7 @@
   justify-content: flex-end;
   position: relative;
   list-style: none;
-  height: 260px;
+  height: 280px;
   width: 100%;
   padding: 0 0 20px;
   border-radius: 10px;
@@ -64,7 +64,7 @@
   padding-top: 5px;
   letter-spacing: .025em;
   font-size: 1.4rem;
-  font-weight: 300;
+  font-weight: 700;
   justify-content: flex-start;
   align-content: flex-start;
 }
@@ -98,24 +98,25 @@
   color: $white;
   margin-top: 0;
   margin-bottom: 0;
-  letter-spacing: 0.025em;
-  font-weight: 400;
+  letter-spacing: 0.015em;
+  font-weight: 500;
   font-size: 2.8rem;
 }
 
 .activity-card__content {
   position: relative;
+  top: -2px;
   z-index: 10;
   padding: 0 20px;
 }
 
 .content-results {
   display: inline-block;
-  margin-right: 0.5em;
-  padding: 4px 10px 2px;
-  border: 1px solid $white;
+  // margin-right: 0.5em;
+  // padding: 4px 10px 2px;
+  // border: 1px solid $white;
   color: $white;
   letter-spacing: 0.5px;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4rem;
 }

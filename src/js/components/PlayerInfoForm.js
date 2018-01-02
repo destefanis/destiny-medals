@@ -14,6 +14,7 @@ class PlayerInfoForm extends React.Component {
     this.state = {
       value: '',
       platform: this.props.defaultPlatform,
+      placeholderText: "YourName#1377",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -23,6 +24,16 @@ class PlayerInfoForm extends React.Component {
 
   handlePlatformChange(selectedPlatform) {
     this.setState({platform: selectedPlatform});
+
+    if (selectedPlatform === '1') {
+      this.setState({placeholderText: "PSN Name"});
+    }
+    else if (selectedPlatform === '2') {
+      this.setState({placeholderText: "Your Gamertag"});
+    }
+    else {
+      this.setState({placeholderText: "YourName#1377"});
+    }
   }
 
   handleChange(e) {
@@ -81,7 +92,7 @@ class PlayerInfoForm extends React.Component {
           <label className="form-label">
             Name
           </label>
-          <input className="form-input" type="text" placeholder="YourName#1377" value={this.state.value} onChange={this.handleChange} />
+          <input className="form-input" type="text" placeholder={this.state.placeholderText} value={this.state.value} onChange={this.handleChange} />
           <div className="button-wrapper">
             <button className="button" type="submit">Search</button>
           </div>
