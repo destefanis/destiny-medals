@@ -13,18 +13,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-// LAYOUT
-
-// .container {
-//   width: 100% - 2 * $site-gutter;
-//   max-width: $site-width;
-//   margin-right: auto;
-//   margin-left: auto;
-// }
 
 .wrapper {
   min-height: 100vh;
-  background-image: linear-gradient(-212deg, #6EFFD2 0%, #6369D1 100%);
+  background-image: linear-gradient(-197deg, #6EFFD2 0%, #6369D1 100%);
 }
 
 // Style the react root.
@@ -34,7 +26,6 @@ body {
 }
 
 .main {
-  height: 90%;
   display: flex;
   align-content: center;
   justify-content: flex-start;

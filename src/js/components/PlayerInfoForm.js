@@ -75,13 +75,18 @@ class PlayerInfoForm extends React.Component {
 
   render() {
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
-        <PlatformSelect onPlatformSelected={this.handlePlatformChange}/>
-        <input className="form-input" type="text" placeholder="YourName#1377" value={this.state.value} onChange={this.handleChange} />
-        <div className="button-wrapper">
-          <button className="button" type="submit">Search</button>
-        </div>
-      </form>
+      <div className="view-container">
+        <form className="form" onSubmit={this.handleSubmit}>
+          <PlatformSelect onPlatformSelected={this.handlePlatformChange}/>
+          <label className="form-label">
+            Name
+          </label>
+          <input className="form-input" type="text" placeholder="YourName#1377" value={this.state.value} onChange={this.handleChange} />
+          <div className="button-wrapper">
+            <button className="button" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -127,13 +127,15 @@ class CharacterSelectList extends React.Component {
     });
 
     return (
-      <div className="character-select">
-        <label className="form-label form-label--transparent">
-          Select Character
-        </label>
-        <ul className="character-list">
-          {characterCards}
-        </ul>
+      <div className="view-container">
+        <div className="character-select">
+          <label className="form-label">
+            Select Character
+          </label>
+          <ul className="character-list">
+            {characterCards}
+          </ul>
+        </div>
       </div>
     )
   }

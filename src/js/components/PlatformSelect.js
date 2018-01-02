@@ -19,7 +19,7 @@ class PlatformSelect extends React.Component {
   render() {
     return (
       <div className="platform-select">
-        <label className="form-label form-label--transparent">
+        <label className="form-label">
           Platform
         </label>
         <div className="platform-select__buttons">
