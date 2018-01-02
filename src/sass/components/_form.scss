@@ -18,6 +18,11 @@
   flex: 0 0 100%;
   position: relative;
   margin: auto;
+  padding: 0 20px;
+
+  @include min($tablet) {
+    padding: 0;
+  }
 
   // &::after {
   //   content: '';

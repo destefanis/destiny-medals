@@ -1,6 +1,10 @@
 .report-scoreboard {
-  padding: 20px;
+  padding: 10px;
   background: $white;
+
+  @include min($tablet) {
+    padding: 20px;
+  }
 }
 
 .team-name {
@@ -27,9 +31,13 @@
   padding-top: 1em;
   text-align: left;
   color: $blue;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 0.025em;
+
+  @include min($tablet) {
+    font-size: 2.2rem;
+  }
 
   &.score-board__team--alpha {
     color: $red;
@@ -40,8 +48,12 @@
   flex: 0 0 auto;
   color: $blue;
   letter-spacing: 1px;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 500;
+
+  @include min($tablet) {
+    font-size: 2.2rem;
+  }
 
   &.score-board__total--alpha {
     color: $red;

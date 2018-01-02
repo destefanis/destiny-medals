@@ -5,8 +5,12 @@
   color: $black;
   text-align: left;
   letter-spacing: 0.025em;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 500;
+
+  @include min($tablet) {
+    font-size: 2.2rem;
+  }
 }
 
 .report-performance {

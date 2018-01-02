@@ -1,22 +1,31 @@
 // Match Report component.
 
 .report-nav {
-  padding: 0 20px;
+  padding: 0 10px;
   text-align: left;
+
+  @include min($tablet) {
+    padding: 20px;
+  }
 }
 
 .report-nav__item {
   position: relative;
   display: inline-block;
   text-align: center;
-  margin-right: 35px;
-  padding: 25px 0 10px;
+  margin-right: 15px;
+  padding: 20px 0 10px;
   color: rgba($black, 0.6);
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.025em;
   opacity: 1;
   transition: all 200ms ease;
+
+  @include min($tablet) {
+    margin-right: 35px;
+    padding: 25px 0 10px;
+  }
 
   &::after,
   &::before {

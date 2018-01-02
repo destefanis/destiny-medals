@@ -19,9 +19,9 @@
   justify-content: flex-end;
   position: relative;
   list-style: none;
-  height: 280px;
+  height: 200px;
   width: 100%;
-  padding: 0 0 20px;
+  padding: 0 0 10px;
   border-radius: 10px;
   background-position: center;
   background-size: cover;
@@ -32,6 +32,11 @@
   cursor: pointer;
   transform: translateY(0);
   transition: all 350ms ease;
+
+  @include min($tablet) {
+    height: 280px;
+    padding: 0 0 20px;
+  }
 
   &::after {
     content: '';
@@ -100,7 +105,11 @@
   margin-bottom: 0;
   letter-spacing: 0.015em;
   font-weight: 500;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
+
+  @include min($tablet) {
+    font-size: 2.8rem;
+  }
 }
 
 .activity-card__content {
