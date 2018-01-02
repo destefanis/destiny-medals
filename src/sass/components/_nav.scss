@@ -11,6 +11,11 @@
   text-transform: uppercase;
   letter-spacing: 8px;
   font-weight: 500;
+  font-size: 1.4rem;
+
+  @include min($tablet) {
+    font-size: 1.6rem;
+  }
 }
 
 .logo-svg {

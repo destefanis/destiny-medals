@@ -9,8 +9,8 @@ import globals from 'rollup-plugin-node-globals';
  
 const productionConfig =
 {
-   entry:  'main.js',
-   dest:   'bundle.js',
+   entry:  'src/js/main.js',
+   dest:   'dist/bundle.js',
    format: 'iife',
    plugins:
    [

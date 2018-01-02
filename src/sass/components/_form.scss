@@ -6,8 +6,12 @@
   justify-content: center;
   align-content: center;
   height: 500px;
-  width: 360px;
+  width: 100%;
   margin: 0 auto;
+
+  @include min($tablet) {
+    width: 360px;
+  }
 
   &.view-container--short {
     height: 380px;

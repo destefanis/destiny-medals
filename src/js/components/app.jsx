@@ -46,7 +46,6 @@ export class App extends React.Component {
     this.setState({
       platform: platform
     });
-    console.log(platform);
   }
 
   handleMembershipChange(membershipId) {

@@ -28,11 +28,11 @@ class PlatformSelect extends React.Component {
             <label className="radio-label" htmlFor="platform-1">PC</label>
           </div>
           <div className="radio-wrapper">
-            <input type="radio" id="platform-2" name="platform" value="1" checked={this.state.radioChecked === '1'} onChange={this.handleRadioChange}/>
+            <input type="radio" id="platform-2" name="platform" value="2" checked={this.state.radioChecked === '2'} onChange={this.handleRadioChange}/>
             <label className="radio-label radio-label--center" htmlFor="platform-2">PS4</label>
           </div>
           <div className="radio-wrapper">
-            <input type="radio" id="platform-3"  name="platform" value="2" checked={this.state.radioChecked === '2'} onChange={this.handleRadioChange}/>
+            <input type="radio" id="platform-3"  name="platform" value="1" checked={this.state.radioChecked === '1'} onChange={this.handleRadioChange}/>
             <label className="radio-label" htmlFor="platform-3">Xbox</label>
           </div>
         </div>
