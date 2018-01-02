@@ -14,7 +14,11 @@
 }
 
 .report-performance {
-  padding: 20px;
+  padding: 10px;
+
+  @include min($tablet) {
+    padding: 20px;
+  }
 }
 
 .metrics-wrapper {

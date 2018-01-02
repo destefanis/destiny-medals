@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
-import Transition from 'react-transition-group/Transition';
 
 import ActivityReport from './ActivityReport';
 
@@ -57,16 +56,19 @@ class ActivityCard extends React.Component {
     };
 
     let report = null;
+    let buttonText;
 
     // Conditionally render the activity report.
     if (isActive) {
       report = <ActivityReport report={this.state.report} characterId={this.props.characterId} />;
+      buttonText = "Close Match";
     } else {
       report = null;
+      buttonText = "View Match";
     }
 
     return (
-      <div className="activity">
+      <div className={isActive ? 'activity activity--is-active': 'activity'}>
         <div className="activity-card" style={divStyle} onClick={ () => {this.toggleActive(this.props.instanceId)}}>
           <div className="activity-card__details">
             <span className="activity-icon">
@@ -85,6 +87,7 @@ class ActivityCard extends React.Component {
           <div className="activity-card__content">
             <span className="content-results">— {this.props.condition}</span>
           </div>
+          <button className="card__toggle-button">{buttonText}</button>
         </div>
         {report}
       </div>

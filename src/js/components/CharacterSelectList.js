@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
-import Transition from 'react-transition-group/Transition';
 import queryString from 'query-string';
 
 import CharacterCard from './CharacterCard';

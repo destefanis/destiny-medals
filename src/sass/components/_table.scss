@@ -66,16 +66,24 @@
   text-align: center;
   border-collapse: collapse;
   table-layout: fixed;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 300;
+
+  @include min($tablet) {
+    font-size: 1.4rem;
+  }
 }
 
 .table-header {
-  padding: 5px;
+  padding: 0;
   padding-right: 0;
   border-bottom: 1px solid $blue-dark;
   text-align: right;
   font-weight: 400;
+
+  @include min($tablet) {
+    padding: 5px;
+  }
 
   &:first-of-type {
     padding-right: 5px;

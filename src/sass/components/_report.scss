@@ -1,5 +1,13 @@
 // Match Report component.
 
+.activity-report {
+  position: relative;
+  z-index: 10;
+  background: $white;
+  margin-top: -5px;
+  color: $blue-dark;
+}
+
 .report-nav {
   padding: 0 10px;
   text-align: left;
@@ -16,7 +24,7 @@
   margin-right: 15px;
   padding: 20px 0 10px;
   color: rgba($black, 0.6);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.025em;
   opacity: 1;
@@ -25,6 +33,7 @@
   @include min($tablet) {
     margin-right: 35px;
     padding: 25px 0 10px;
+    font-size: 1.4rem;
   }
 
   &::after,
@@ -55,11 +64,4 @@
       transform: scaleX(1);
     }
   }
-}
-
-.activity-report {
-  position: relative;
-  background: $white;
-  margin-top: -5px;
-  color: $blue-dark;
 }
