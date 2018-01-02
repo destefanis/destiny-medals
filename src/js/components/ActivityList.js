@@ -99,7 +99,6 @@ class ActivityList extends React.Component {
     var merged = [].concat.apply([], activityHistory);
 
     let activities = merged.slice(0, listSize).map((activity, index) => {
-      console.log(activity);
       return <ActivityCard
               activityDefinition={this.findActivityData(activity.activityDetails.referenceId)}
               modeData={this.findModeData(activity.activityDetails.directorActivityHash, activity.activityDetails.mode)}

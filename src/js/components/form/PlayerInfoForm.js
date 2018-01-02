@@ -1,10 +1,11 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import queryString from 'query-string';
 
 import PlatformSelect from './PlatformSelect';
 
-import requestHeader from '../constants/requestHeader.js';
-import host from '../constants/host.js';
+import requestHeader from '../../constants/requestHeader.js';
+import host from '../../constants/host.js';
 
 class PlayerInfoForm extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class PlayerInfoForm extends React.Component {
     this.state = {
       value: '',
       platform: this.props.defaultPlatform,
-      placeholderText: "YourName#1377",
+      placeholderText: "YourName#1337",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,7 +33,7 @@ class PlayerInfoForm extends React.Component {
       this.setState({placeholderText: "Your Gamertag"});
     }
     else {
-      this.setState({placeholderText: "YourName#1377"});
+      this.setState({placeholderText: "YourName#1337"});
     }
   }
 
@@ -82,6 +83,16 @@ class PlayerInfoForm extends React.Component {
       .catch(function(error) { 
         console.log('Requestfailed', error) 
       });
+  }
+
+  componentDidMount(props) {
+    // Update the form to use url parameters if the exist.
+    let parsed = queryString.parse(this.props.location.search);
+    let userName = parsed.name;
+
+    if (userName) {
+      this.setState({value: userName});
+    }
   }
 
   render() {

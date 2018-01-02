@@ -8,7 +8,6 @@ class PlayerPerformance extends React.Component {
 
   render() {
     const player = this.props.player;
-    console.log(player);
     const values = this.props.player.values;
 
     return (

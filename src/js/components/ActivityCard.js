@@ -61,10 +61,10 @@ class ActivityCard extends React.Component {
     // Conditionally render the activity report.
     if (isActive) {
       report = <ActivityReport report={this.state.report} characterId={this.props.characterId} />;
-      buttonText = "Close Match";
+      buttonText = "Close";
     } else {
       report = null;
-      buttonText = "View Match";
+      buttonText = "View";
     }
 
     return (

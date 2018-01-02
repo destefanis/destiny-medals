@@ -8,18 +8,20 @@
 }
 
 .activity {
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
   box-shadow: 0 6px 12px rgba($black, 0.24);
   border-radius: 10px;
   transform: translateY(0);
   transition: all 200ms ease;
 
+  @include min($tablet) {
+    margin-bottom: 1em;
+  }
+
   &:hover {
-    box-shadow: 0 8px 18px rgba($black, 0.14);
-    transform: translateY(-2px);
 
     .card__toggle-button {
-      background: $blue;
+      background: $aqua-dark;
       color: $white;
     }
   }
@@ -61,9 +63,13 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: linear-gradient(rgba($white, 0), rgba($blue, 0.6));
+    background: linear-gradient(rgba($white, 0), rgba($blue, 0.9));
     z-index: 1;
     border-radius: 10px;
+
+    @include min($tablet) {
+      background: linear-gradient(rgba($white, 0), rgba($blue, 0.6));
+    }
   }
 }
 
@@ -72,17 +78,23 @@
   z-index: 10;
   flex: 0 0 auto;
   justify-self: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
   margin-bottom: auto;
   display: flex;
   flex-flow: row;
-  padding-right: 20px;
-  padding-left: 5px;
-  padding-top: 5px;
+  padding-right: 15px;
+  padding-left: 0;
+  padding-top: 0;
   letter-spacing: .025em;
   font-size: 1.4rem;
   font-weight: 700;
-  justify-content: flex-start;
-  align-content: flex-start;
+
+  @include min($tablet) {
+    padding-top: 5px;
+    padding-right: 20px;
+    padding-left: 5px;
+  }
 }
 
 .details-mode {
@@ -94,6 +106,7 @@
   justify-self: flex-end;
   margin-left: auto;
   text-transform: capitalize;
+  text-align: right;
 }
 
 .activity-icon {
@@ -148,39 +161,17 @@
   font-size: 1.4rem;
 }
 
-// .card__toggle-button {
-//   position: absolute;
-//   bottom: 20px;
-//   right: 20px;
-//   display: inline-block;
-//   z-index: 10;
-//   padding: 10px 15px;
-//   border-radius: 4px;
-//   box-shadow: 0 6px 14px rgba($black, 0.14);
-//   background: $white;
-//   color: $blue;
-//   font-size: 1.4rem;
-//   cursor: pointer;
-//   transition: all 200ms ease;
-//   transition-property: background, color, box-shadow;
-
-//   &:hover {
-//     background: $blue;
-//     color: $white;
-//   }
-
 .card__toggle-button {
   position: absolute;
   bottom: 20px;
-  right: 10px;
+  right: 15px;
   display: inline-block;
   z-index: 10;
-  padding: 10px 15px;
-  border-radius: 4px;
-  box-shadow: 0 6px 14px rgba($black, 0.14);
-  background: $white;
-  color: $blue;
+  padding: 6px 15px;
+  background: $blue-dark;
+  color: $white;
   font-size: 1.2rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 200ms ease;
   transition-property: background, color, box-shadow;
@@ -191,12 +182,13 @@
     font-size: 1.4rem;
   }
 
-  &:hover {
-    background: $blue;
+  &:hover,
+  &:focus {
+    background: $aqua-dark;
     color: $white;
+    outline: none;
   }
 }
-// }
 
 // Activity Transition
 .fade-enter {
