@@ -81,7 +81,7 @@ class ActivityReport extends React.Component {
               className=''
               onClick={this.handleClick}>
               <PlayerPerformance player={this.findPlayer(this.props.characterId, report.entries)} />
-              <MedalsList player={this.findPlayer(this.props.characterId, report.entries)}/>
+              <MedalsList player={this.findPlayer(this.props.characterId, report.entries)} instanceId={this.props.instanceId} />
             </SwipeItem>
             <SwipeItem
               className=''

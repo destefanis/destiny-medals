@@ -60,7 +60,7 @@ class ActivityCard extends React.Component {
 
     // Conditionally render the activity report.
     if (isActive) {
-      report = <ActivityReport report={this.state.report} characterId={this.props.characterId} />;
+      report = <ActivityReport report={this.state.report} characterId={this.props.characterId} instanceId={this.props.instanceId} />;
       buttonText = "Close";
     } else {
       report = null;
@@ -90,6 +90,11 @@ class ActivityCard extends React.Component {
           <button className="card__toggle-button">{buttonText}</button>
         </div>
         {report}
+        <div className="activity-close">
+          <span className="close-button" onClick={ () => {this.toggleActive(this.props.instanceId)}}>
+            Close Report
+          </span>
+        </div>
       </div>
     )
   }

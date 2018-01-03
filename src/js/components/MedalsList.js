@@ -28,6 +28,11 @@ class MedalsList extends React.Component {
     return (medalData);
   }
 
+  generateUniqueKey(instanceId, index) {
+    let medalKey = instanceId + index;
+    return (medalKey);
+  }
+
   findMedalCount(medal) {
     let medalCount = this.props.player.extended.values[medal].basic.displayValue;
     return (medalCount);
@@ -41,7 +46,7 @@ class MedalsList extends React.Component {
     const medalValues = Object.keys(extendedValues).filter((key) => key.match(regex));
 
     const medal = medalValues.map((medal, index) =>
-      <div className="medal" key={index} data-tip={this.findMedalData(medal)}>
+      <div className="medal" key={this.generateUniqueKey(this.props.instanceId, index)} data-tip={this.findMedalData(medal)}>
         <figure className="medal-icon-wrapper">
           <img className="medal-icon" key={index} src={this.findMedalImage(medal)} />
         </figure>
