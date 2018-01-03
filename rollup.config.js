@@ -28,7 +28,6 @@ const productionConfig =
             './node_modules/react/react.js': 
             [ 'cloneElement', 'createElement', 'PropTypes', 
               'Children', 'Component' ],
-            // './node_modules/the-traveler/build/traveler.js': [ 'Traveler' ],
          }
       }),
       babel({
@@ -76,9 +75,6 @@ const developmentConfig =
          {
             './node_modules/react/react.js': [ 'cloneElement', 'createElement', 'PropTypes', 
               'Children', 'Component' ],
-            // 'node_modules/the-traveler/build/traveler.js': [ 'Traveler', 'traveler' ],
-            // 'node_modules/punycode/punycode.js': ['toASCII'],
-            // 'node_modules/buffer-es6/index.js': ['def' + 'ault'],
          }
       }),
       babel({

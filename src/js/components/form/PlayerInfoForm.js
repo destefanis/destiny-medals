@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import Notifications, {notify} from 'react-notify-toast';
 import queryString from 'query-string';
 
 import PlatformSelect from './PlatformSelect';
@@ -81,7 +82,10 @@ class PlayerInfoForm extends React.Component {
         })
       })
       .catch(function(error) { 
-        console.log('Requestfailed', error) 
+        console.log('Requestfailed', error);
+        let myColor = { background: '#FFFFFF', text: "#ea5d5d" };
+        let errorMessage = "Sorry, that name didn't work. Please verify you have the correct platform selected and try again!";
+        notify.show(errorMessage, "custom", 4000, myColor);
       });
   }
 
@@ -98,6 +102,7 @@ class PlayerInfoForm extends React.Component {
   render() {
     return (
       <div className="view-container">
+        <Notifications />
         <form className="form" onSubmit={this.handleSubmit}>
           <PlatformSelect onPlatformSelected={this.handlePlatformChange}/>
           <label className="form-label">

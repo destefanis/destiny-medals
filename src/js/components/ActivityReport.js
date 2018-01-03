@@ -59,11 +59,11 @@ class ActivityReport extends React.Component {
         <div className="report-nav">
           <a href="#" onClick={(e) => this.transitionSlide(e, 0, 300)} 
             className={this.state.activeTab === 0 ? 'report-nav__item is-active' : 'report-nav__item'}>
-            Post Game Report
+            Your Performance
           </a>
           <a href="#" onClick={(e) => this.transitionSlide(e, 1, 300)} 
             className={this.state.activeTab === 1 ? 'report-nav__item is-active' : 'report-nav__item'}>
-            Your Performance
+            Post Game Report
           </a>
         </div>
         <Swipe
@@ -80,18 +80,18 @@ class ActivityReport extends React.Component {
             <SwipeItem
               className=''
               onClick={this.handleClick}>
+              <PlayerPerformance player={this.findPlayer(this.props.characterId, report.entries)} />
+              <MedalsList player={this.findPlayer(this.props.characterId, report.entries)}/>
+            </SwipeItem>
+            <SwipeItem
+              className=''
+              onClick={this.handleClick}>
               <div className="report-scoreboard">
                 <Table data={report.entries} 
                   alphaScore={report.teams[0].score.basic.displayValue}
                   bravoScore={report.teams[1].score.basic.displayValue}
                 />
               </div>
-            </SwipeItem>
-            <SwipeItem
-              className=''
-              onClick={this.handleClick}>
-              <PlayerPerformance player={this.findPlayer(this.props.characterId, report.entries)} />
-              <MedalsList player={this.findPlayer(this.props.characterId, report.entries)}/>
             </SwipeItem>
         </Swipe>
       </div>
