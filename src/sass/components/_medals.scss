@@ -45,7 +45,7 @@
 
 .tooltip {
   background: $black;
-  font-weight: 300;
+  font-weight: 400;
 
   &.__react_component_tooltip {
     padding-left: 15px;
@@ -53,6 +53,13 @@
 
     &.show {
       opacity: 1;
+    }
+  }
+
+  &.tooltip--error {
+
+    @include min($tablet) {
+      font-size: 1.6rem;
     }
   }
 

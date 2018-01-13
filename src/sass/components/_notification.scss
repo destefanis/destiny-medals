@@ -1,0 +1,33 @@
+/*
+ * Notification styles.
+ */
+
+.notify-container {
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  left: 0;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+
+.notification {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: $white;
+  color: $black;
+  border-radius: 2px;
+  text-align: center;
+  transition: all 200ms ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.notification-body {
+  padding: 20px;
+}

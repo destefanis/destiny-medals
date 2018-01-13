@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import Notifications, {notify} from 'react-notify-toast';
 import queryString from 'query-string';
+import ReactTooltip from 'react-tooltip'
 
 import PlatformSelect from './PlatformSelect';
 
@@ -15,12 +15,14 @@ class PlayerInfoForm extends React.Component {
     // Set local state so we can update this value for form submission.
     this.state = {
       value: '',
+      errorMessage: '',
       platform: this.props.defaultPlatform,
       placeholderText: "YourName#1337",
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.showNotification = this.showNotification.bind(this);
     this.handlePlatformChange = this.handlePlatformChange.bind(this);
   }
 
@@ -43,6 +45,8 @@ class PlayerInfoForm extends React.Component {
     this.setState({value: e.target.value});
     // Callback to parent state.
     this.props.onHandleInputChange(e.target.value);
+    // Hide the tooltip/error message.
+    ReactTooltip.hide(this.refs.input);
   }
 
   handleSubmit(e) {
@@ -81,12 +85,22 @@ class PlayerInfoForm extends React.Component {
           state: { name: this.state.value }
         })
       })
-      .catch(function(error) { 
-        console.log('Requestfailed', error);
-        let myColor = { background: '#FFFFFF', text: "#ea5d5d" };
-        let errorMessage = "Sorry, that name didn't work. Please verify you have the correct platform selected and try again!";
-        notify.show(errorMessage, "custom", 4000, myColor);
+      .catch(error => {
+        if (error === 5) {
+          this.setState({
+            errorMessage: "Sorry, the Bungies servers are down for maintenance. Try again later!",
+          });
+        } else {
+          this.setState({
+            errorMessage: "Oops! Couldn't find a player by that name on this platform.",
+          });
+        }
+        ReactTooltip.show(this.refs.input)
       });
+  }
+
+  showNotification(message, time) {
+    this.refs.notify.error(message, time);
   }
 
   componentDidMount(props) {
@@ -102,17 +116,20 @@ class PlayerInfoForm extends React.Component {
   render() {
     return (
       <div className="view-container">
-        <Notifications />
         <form className="form" onSubmit={this.handleSubmit}>
           <PlatformSelect onPlatformSelected={this.handlePlatformChange}/>
           <label className="form-label">
             Name
           </label>
+          <p data-tip={this.state.errorMessage} ref='input' data-event='mouseenter' data-event-off='click'></p>
           <input className="form-input" type="text" placeholder={this.state.placeholderText} value={this.state.value} onChange={this.handleChange} />
           <div className="button-wrapper">
-            <button className="button" type="submit">Search</button>
+            <button className="button" type="submit" disabled={!this.state.value}>
+              Search
+            </button>
           </div>
         </form>
+        <ReactTooltip className="tooltip tooltip--error" place="top" effect="static" html={true} />
       </div>
     );
   }

@@ -1,0 +1,153 @@
+// Ghost Icon and Animation
+
+.ghost-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: auto;
+  width: 150px;
+  animation: hover;
+  animation-duration: 4s;
+  animation-delay: 0;
+  animation-timing-function: cubic-bezier(.52,.01,.39,.9);
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  animation-iteration-count: infinite;
+  perspective: 200px;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+}
+
+.back-panels {
+  animation: rotate;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(.54,.32,.25,.99);
+  transform-origin: center;
+  transform: rotate(45deg);
+  animation-iteration-count: infinite;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+}
+
+.sensor-ball {
+  animation: lookAround;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(.54,.32,.25,.99);
+  transform-origin: center;
+  transform: rotateX(0deg) rotateY(0deg);
+  animation-iteration-count: infinite;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+}
+
+.sensor-light {
+  animation: process;
+  animation-duration: 6s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  will-change: opacity;
+}
+
+@keyframes process {
+  0%, 10%, 100% {
+    opacity: 1;
+  }
+  
+  12% {
+    opacity: 0.6;
+  }
+  
+  14%, 18% {
+    opacity: 1;
+  }
+  
+  20% {
+    opacity: 0.6;
+  }
+  
+  22%, 66% {
+    opacity: 1;
+  }
+  
+  68% {
+    opacity: 0.6;
+  }
+  
+  70% {
+    opacity: 1;
+  }
+}
+
+@keyframes lookAround {
+  0%, 100% {
+     transform: rotateX(0deg) rotateY(0deg) translate(0, 0);
+  }
+  
+  10%, 15% {
+    transform: rotateX(2deg) rotateY(10deg) translate(2px, 2px);
+  }
+
+  
+  20%, 22% {
+    transform: rotateX(0deg) rotateY(0deg) translate(0px, 0px);
+  }
+  
+  30%, 34% {
+    transform: rotateX(-2deg) rotateY(-10deg) translate(-3px, 3px);
+  }
+  
+  40%, 45% {
+    transform: rotateX(0deg) rotateY(0deg) translate(0px, 0px);
+  }
+  
+  50%, 60% {
+    transform: rotateX(2deg) rotateY(-10deg) translate(2px, -4px);
+  }
+  
+  70% {
+    transform: rotateX(0deg) rotateY(0deg) translate(0px, 0px);
+  }
+}
+
+// @keyframes rotate {
+//   0%, 20%, 100% {
+//     transform: rotate(45deg);
+//   }
+  
+//   50% {
+//     transform: rotate(180deg);
+//   }
+// }
+
+@keyframes rotate {
+  0%, 20%, 100% {
+    transform: rotate(45deg);
+  }
+  
+  35% {
+    transform: rotate(90deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  70% {
+    transform: rotate(180deg);
+  }
+  
+  85% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes hover {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  
+  50% {
+    transform: translate(-50%, -20%);
+  }
+}
