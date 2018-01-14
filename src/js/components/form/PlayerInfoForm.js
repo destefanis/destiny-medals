@@ -1,12 +1,24 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import queryString from 'query-string';
+import queryString from 'query-string'
 import ReactTooltip from 'react-tooltip'
+import { CSSTransition } from 'react-transition-group'
+import anime from 'animejs'
 
 import PlatformSelect from './PlatformSelect';
 
 import requestHeader from '../../constants/requestHeader.js';
 import host from '../../constants/host.js';
+
+const animateIn = () => {
+  const form = document.querySelector('.form')
+  anime({
+    targets: form,
+    duration: 2000,
+    opacity: [0, 1],
+    translateY: [20, 0]
+  })
+}
 
 class PlayerInfoForm extends React.Component {
   constructor(props) {
@@ -22,7 +34,6 @@ class PlayerInfoForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.showNotification = this.showNotification.bind(this);
     this.handlePlatformChange = this.handlePlatformChange.bind(this);
   }
 
@@ -111,6 +122,8 @@ class PlayerInfoForm extends React.Component {
     if (userName) {
       this.setState({value: userName});
     }
+
+    animateIn();
   }
 
   render() {

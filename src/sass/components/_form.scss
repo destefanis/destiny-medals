@@ -131,10 +131,6 @@
   }
 }
 
-// .radio-label--center {
-//   margin: 0 5px;
-// }
-
 /* Input style */
 input[type="radio"] {
   opacity: 0;
@@ -151,4 +147,14 @@ input[type="radio"]:checked ~ label {
   background: $white;
   color: $blue-dark;
   box-shadow: 0 6px 14px rgba($black, 0.11);
+}
+
+// Form Animation
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
 }

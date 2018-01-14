@@ -40,6 +40,7 @@
     "rollup-plugin-uglify": "*"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "moment": "^2.20.1",
     "query-string": "^5.0.1",
     "react-router-dom": "^4.2.2",

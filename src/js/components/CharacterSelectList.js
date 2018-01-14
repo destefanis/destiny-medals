@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
-import queryString from 'query-string';
+import queryString from 'query-string'
+import anime from 'animejs'
 
 import CharacterCard from './CharacterCard';
 
@@ -108,6 +109,14 @@ class CharacterSelectList extends React.Component {
     } else {
       this.fetchCharacterData(this.props.platform, this.props.membershipId);
     }
+
+    const characterList = document.querySelector('.character-select');
+    anime({
+      targets: characterList,
+      duration: 2000,
+      opacity: [0, 1],
+      translateY: [20, 0]
+    })
   }
 
   render() {
