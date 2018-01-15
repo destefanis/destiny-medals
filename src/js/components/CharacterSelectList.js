@@ -13,12 +13,12 @@ const animateIn = () => {
   const characters = document.querySelectorAll('.character-list__item')
   anime({
     targets: characters,
-    duration: 1000,
-    delay: 1000,
+    duration: 600,
+    delay: 500,
     opacity: [0, 1],
-    translateY: [20, 0],
+    translateY: [-20, 0],
     elasticity: 0,
-    easing: easeInOutSine,
+    easing: 'easeInOutCirc',
     delay: function (el, i, l) {
       return i * 200
     }
@@ -93,7 +93,7 @@ class CharacterSelectList extends React.Component {
             })
         }
       })
-      .catch(function(error) { 
+      .catch(error => { 
         console.log('Requestfailed', error) 
       });
   }

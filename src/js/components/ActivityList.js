@@ -16,7 +16,7 @@ import host from '../constants/host.js'
 
 const animateIn = () => {
   const activityCards = document.querySelectorAll('.activity')
-  currentAnimation = anime.timeline()
+  let currentAnimation = anime.timeline()
   .add({
     targets: activityCards,
     duration: 500,
@@ -29,7 +29,6 @@ const animateIn = () => {
   })
 }
 
-
 class ActivityList extends React.Component {
   constructor(props) {
     super(props);
@@ -39,8 +38,11 @@ class ActivityList extends React.Component {
       membershipId: this.props.membershipId,
       platform: this.props.platform,
       activityHistoryData: [],
+      preloaderVisible: false,
+      listVisible: false,
     };
 
+    this.determinePreloader = this.determinePreloader.bind(this);
     this.fetchActivityHistory = this.fetchActivityHistory.bind(this);
   }
 
@@ -91,11 +93,22 @@ class ActivityList extends React.Component {
           platform: platform,
           activityHistoryData: [...this.state.activityHistoryData, data.Response.activities]
         });
-        animateIn();
+        this.determinePreloader(data.Response.activities);
       })
-      .catch(function(error) { 
+      .catch(error => { 
         console.log('Requestfailed', error) 
       });
+  }
+
+  // Show the preloader if the activity history doesn't exist.
+  determinePreloader(data) {
+    if (data === undefined) {
+      this.setState({
+        preloaderVisible: true,
+      });
+    } else {
+      animateIn();
+    }
   }
 
   componentDidMount(props) {
@@ -116,31 +129,33 @@ class ActivityList extends React.Component {
     let listSize = 30;
     let activityHistory = this.state.activityHistoryData;
     let merged = [].concat.apply([], activityHistory);
+    let activities = null;
 
-    let activities = merged.slice(0, listSize).map((activity, index) => {
-      return <ActivityCard
-              activityDefinition={this.findActivityData(activity.activityDetails.referenceId)}
-              modeData={this.findModeData(activity.activityDetails.directorActivityHash, activity.activityDetails.mode)}
-              kills={activity.values.kills.basic.displayValue}
-              deaths={activity.values.deaths.basic.displayValue}
-              assists={activity.values.assists.basic.displayValue}
-              condition={activity.values.standing.basic.displayValue}
-              date={this.parseDate(activity.period)}
-              instanceId={activity.activityDetails.instanceId}
-              characterId={this.state.characterId}
-              key={index} />
-    });
+    if (merged.length > 1) {
+      activities = merged.slice(0, listSize).map((activity, index) => {
+        return <ActivityCard
+                activityDefinition={this.findActivityData(activity.activityDetails.referenceId)}
+                modeData={this.findModeData(activity.activityDetails.directorActivityHash, activity.activityDetails.mode)}
+                kills={activity.values.kills.basic.displayValue}
+                deaths={activity.values.deaths.basic.displayValue}
+                assists={activity.values.assists.basic.displayValue}
+                condition={activity.values.standing.basic.displayValue}
+                date={this.parseDate(activity.period)}
+                instanceId={activity.activityDetails.instanceId}
+                characterId={this.state.characterId}
+                key={index} />
+      });
+    }
 
     return (
       <div className="activity-history">
         <div className="activity-list">
-          {activityHistory.length ? (
-            <TransitionGroup>
-              {activities}
-            </TransitionGroup>
-          ) : (
+          {this.state.preloaderVisible &&
             <Preloader message="Sorry, there is no multiplayer history for this character." />
-          )}
+          }
+          <TransitionGroup>
+            {activities}
+          </TransitionGroup>
         </div>
       </div>
     )
