@@ -16,7 +16,7 @@ const animateIn = () => {
     duration: 600,
     delay: 500,
     opacity: [0, 1],
-    translateY: [-20, 0],
+    translateY: [-30, 0],
     elasticity: 0,
     easing: 'easeInOutCirc',
     delay: function (el, i, l) {
