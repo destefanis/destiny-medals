@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+import { TransitionGroup } from 'react-transition-group';
 import queryString from 'query-string'
 import anime from 'animejs'
 
@@ -8,6 +9,21 @@ import CharacterCard from './CharacterCard';
 import requestHeader from '../constants/requestHeader.js';
 import host from '../constants/host.js';
 
+const animateIn = () => {
+  const characters = document.querySelectorAll('.character-list__item')
+  anime({
+    targets: characters,
+    duration: 1000,
+    delay: 1000,
+    opacity: [0, 1],
+    translateY: [20, 0],
+    elasticity: 0,
+    easing: easeInOutSine,
+    delay: function (el, i, l) {
+      return i * 200
+    }
+  })
+}
 
 class CharacterSelectList extends React.Component {
   constructor(props) {
@@ -50,6 +66,7 @@ class CharacterSelectList extends React.Component {
     });
 
     this.props.onCharacterListChange(newCharacterData);
+    animateIn();
   }
 
   fetchCharacterData(platform, membershipId) {
@@ -113,7 +130,8 @@ class CharacterSelectList extends React.Component {
     const characterList = document.querySelector('.character-select');
     anime({
       targets: characterList,
-      duration: 2000,
+      duration: 1000,
+      easing: 'easeInOutQuart',
       opacity: [0, 1],
       translateY: [20, 0]
     })
@@ -141,7 +159,9 @@ class CharacterSelectList extends React.Component {
             Select Character
           </label>
           <ul className="character-list">
-            {characterCards}
+            <TransitionGroup>
+              {characterCards}
+            </TransitionGroup>
           </ul>
         </div>
       </div>

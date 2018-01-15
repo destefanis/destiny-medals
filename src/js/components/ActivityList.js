@@ -1,16 +1,34 @@
-import React from 'react';
+import React from 'react'
 import { withRouter } from 'react-router-dom'
-import Transition from 'react-transition-group/Transition';
-import moment from 'moment';
-import queryString from 'query-string';
+import { TransitionGroup } from 'react-transition-group'
+import moment from 'moment'
+import queryString from 'query-string'
+import anime from 'animejs'
 
-import ActivityCard from './ActivityCard';
+import ActivityCard from './ActivityCard'
+import Preloader from './preloader/Preloader'
 
-import PvpActivityDefinition from '../data/DestinyActivityDefinition.json';
-import ActivityModeDefinition from '../data/DestinyActivityModeDefinition.json';
+import PvpActivityDefinition from '../data/DestinyActivityDefinition.json'
+import ActivityModeDefinition from '../data/DestinyActivityModeDefinition.json'
 
-import requestHeader from '../constants/requestHeader.js';
-import host from '../constants/host.js';
+import requestHeader from '../constants/requestHeader.js'
+import host from '../constants/host.js'
+
+const animateIn = () => {
+  const activityCards = document.querySelectorAll('.activity')
+  currentAnimation = anime.timeline()
+  .add({
+    targets: activityCards,
+    duration: 500,
+    opacity: [0, 1],
+    translateY: [50, 0],
+    elasticity: 1000,
+    delay: function (el, i, l) {
+      return i * 300
+    }
+  })
+}
+
 
 class ActivityList extends React.Component {
   constructor(props) {
@@ -73,6 +91,7 @@ class ActivityList extends React.Component {
           platform: platform,
           activityHistoryData: [...this.state.activityHistoryData, data.Response.activities]
         });
+        animateIn();
       })
       .catch(function(error) { 
         console.log('Requestfailed', error) 
@@ -96,7 +115,7 @@ class ActivityList extends React.Component {
   render() {
     let listSize = 30;
     let activityHistory = this.state.activityHistoryData;
-    var merged = [].concat.apply([], activityHistory);
+    let merged = [].concat.apply([], activityHistory);
 
     let activities = merged.slice(0, listSize).map((activity, index) => {
       return <ActivityCard
@@ -115,7 +134,13 @@ class ActivityList extends React.Component {
     return (
       <div className="activity-history">
         <div className="activity-list">
-          {activities}
+          {activityHistory.length ? (
+            <TransitionGroup>
+              {activities}
+            </TransitionGroup>
+          ) : (
+            <Preloader message="Sorry, there is no multiplayer history for this character." />
+          )}
         </div>
       </div>
     )

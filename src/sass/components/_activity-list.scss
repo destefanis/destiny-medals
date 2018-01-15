@@ -2,6 +2,7 @@
 
 .activity-list {
   max-width: 620px;
+  min-height: 200px;
   margin: 2em auto;
   padding: 0 10px;
   text-align: center;
@@ -11,14 +12,16 @@
   margin-bottom: 0.75em;
   box-shadow: 0 6px 12px rgba($black, 0.24);
   border-radius: 10px;
-  transform: translateY(0);
+  transform: translateY(50px);
   transition: all 200ms ease;
+  opacity: 0;
 
   @include min($tablet) {
     margin-bottom: 1em;
   }
 
   &:hover {
+    box-shadow: 0 11px 16px rgba($black, 0.16);
 
     .card__toggle-button {
       background: $aqua-dark;
@@ -56,13 +59,27 @@
     padding: 0 0 20px;
   }
 
+  &::before,
   &::after {
     content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    position: absolute;
     height: 100%;
     width: 100%;
+  }
+
+  &::before {
+    background: $blue;
+    opacity: 1;
+    z-index: 9;
+    border-radius: 10px;
+    pointer-events: none;
+    animation: fadeBackground 500ms 1 800ms;
+    animation-fill-mode: forwards;
+  }
+
+  &::after {
     background: linear-gradient(rgba($white, 0), rgba($blue, 0.9));
     z-index: 1;
     border-radius: 10px;
@@ -70,6 +87,21 @@
     @include min($tablet) {
       background: linear-gradient(rgba($white, 0), rgba($blue, 0.6));
     }
+  }
+}
+
+@keyframes fadeBackground {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -1;
   }
 }
 
@@ -212,23 +244,4 @@
     background: $blue;
     color: $white;
   }
-}
-
-// Activity Transition
-.fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 800ms ease-in;
 }

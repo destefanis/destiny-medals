@@ -14,7 +14,8 @@ const animateIn = () => {
   const form = document.querySelector('.form')
   anime({
     targets: form,
-    duration: 2000,
+    duration: 1000,
+    easing: 'easeInOutQuart',
     opacity: [0, 1],
     translateY: [20, 0]
   })
