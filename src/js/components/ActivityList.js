@@ -22,7 +22,8 @@ const animateIn = () => {
     duration: 500,
     opacity: [0, 1],
     translateY: [50, 0],
-    elasticity: 1000,
+    easing: 'easeInOutCubic',
+    elasticity: 0,
     delay: function (el, i, l) {
       return i * 300
     }

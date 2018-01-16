@@ -12,6 +12,7 @@ class ActivityCard extends React.Component {
 
     this.state = { 
       isActive: false,
+      isLoading: false,
       report: null,
     };
 
@@ -27,13 +28,19 @@ class ActivityCard extends React.Component {
 
       // Only make a request if the state is empty.
       if (this.state.report === null) {
+        this.setState({
+          isLoading: true,
+        });
         fetch(request)
           .then(response => response.json())
           .then(data => {
-            this.setState({report: data.Response });
-            this.setState({isActive: true });
+            this.setState({
+              report: data.Response,
+              isActive: true,
+              isLoading: false,
+            });
           })
-          .catch(function(error) { 
+          .catch(error => { 
             console.log('Requestfailed', error) 
           });
       } else {
@@ -65,6 +72,10 @@ class ActivityCard extends React.Component {
     } else {
       report = null;
       buttonText = "View";
+    }
+
+    if (this.state.isLoading) {
+      buttonText = "Loading";
     }
 
     return (

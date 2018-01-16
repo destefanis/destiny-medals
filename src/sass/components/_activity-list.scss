@@ -13,7 +13,7 @@
   box-shadow: 0 6px 12px rgba($black, 0.24);
   border-radius: 10px;
   transform: translateY(50px);
-  transition: all 200ms ease;
+  transition: box-shadow 250ms ease;
   opacity: 0;
 
   @include min($tablet) {
@@ -21,7 +21,7 @@
   }
 
   &:hover {
-    box-shadow: 0 11px 16px rgba($black, 0.16);
+    box-shadow: 0 8px 18px rgba($black, 0.20);
 
     .card__toggle-button {
       background: $aqua-dark;
@@ -207,6 +207,8 @@
   cursor: pointer;
   transition: all 200ms ease;
   transition-property: background, color, box-shadow;
+  border-style: none;
+  border: 1px solid $white;
 
   @include min($tablet) {
     bottom: 20px;

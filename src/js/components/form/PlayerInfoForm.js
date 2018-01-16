@@ -41,10 +41,10 @@ class PlayerInfoForm extends React.Component {
   handlePlatformChange(selectedPlatform) {
     this.setState({platform: selectedPlatform});
 
-    if (selectedPlatform === '1') {
+    if (selectedPlatform === '2') {
       this.setState({placeholderText: "PSN Name"});
     }
-    else if (selectedPlatform === '2') {
+    else if (selectedPlatform === '1') {
       this.setState({placeholderText: "Your Gamertag"});
     }
     else {
