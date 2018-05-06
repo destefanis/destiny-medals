@@ -24,7 +24,7 @@
     box-shadow: 0 8px 18px rgba($black, 0.20);
 
     .card__toggle-button {
-      background: $aqua-dark;
+      background: $blue-dark;
       color: $white;
     }
   }
@@ -163,12 +163,15 @@
   color: $white;
   margin-top: 0;
   margin-bottom: 0;
-  letter-spacing: 0.015em;
-  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 900;
   font-size: 2.2rem;
+  line-height: 1;
 
   @include min($tablet) {
-    font-size: 2.8rem;
+    font-size: 3.4rem;
+    width: 50%;
   }
 }
 
@@ -187,10 +190,16 @@
 
 .content-results {
   flex: 0 0 auto;
-  color: $white;
-  letter-spacing: 0.5px;
-  font-weight: 400;
+  color: $blue-dark;
+  letter-spacing: .5px;
+  font-weight: 500;
   font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: $white;
+  margin-top: 10px;
+  padding: 4px 9px 3px 10px;
+  line-height: 1.2;
 }
 
 .card__toggle-button {
@@ -199,9 +208,10 @@
   right: 15px;
   display: inline-block;
   z-index: 10;
-  padding: 6px 15px;
-  background: $blue-dark;
-  color: $white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: $white;
+  color: $blue-dark;
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
@@ -218,7 +228,7 @@
 
   &:hover,
   &:focus {
-    background: $aqua-dark;
+    background: $blue-dark;
     color: $white;
     outline: none;
   }

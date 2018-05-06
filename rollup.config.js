@@ -9,9 +9,11 @@ import globals from 'rollup-plugin-node-globals';
  
 const productionConfig =
 {
-   entry:  'src/js/main.js',
-   dest:   'dist/bundle.js',
-   format: 'iife',
+   input:  'src/js/main.js',
+   output: {
+    file: 'dist/bundle.js',
+    format: 'iife'
+   },
    plugins:
    [
       nodeResolve({
@@ -57,9 +59,11 @@ const productionConfig =
 
 const developmentConfig =
 {
-   entry:  'src/js/main.js',
-   dest:   'dist/bundle.js',
-   format: 'iife',
+   input:  'src/js/main.js',
+   output: {
+    file: 'dist/bundle.js',
+    format: 'iife'
+   },
    plugins:
    [
       nodeResolve({
@@ -75,7 +79,9 @@ const developmentConfig =
          {
             './node_modules/react/react.js': [ 'cloneElement', 'createElement', 'PropTypes', 
               'Children', 'Component' ],
-         }
+         },
+         experimentalCodeSplitting: true,
+         experimentalDynamicImport: true
       }),
       babel({
          exclude: [
