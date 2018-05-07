@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Swipe, { SwipeItem } from 'swipejs/react';
 
 import Table from './table/Table.js';
@@ -12,6 +13,7 @@ class ActivityReport extends React.Component {
     this.state = {
       mySwipe: null,
       activeTab: 0,
+      sliderHeight: 'auto',
     };
 
     this.findPlayer = this.findPlayer.bind(this);
@@ -30,19 +32,43 @@ class ActivityReport extends React.Component {
 
   transitionSlide(e, index, duration) {
     e.preventDefault();
+    let activeSlide;
+    let newHeight;
 
     this.state.mySwipe.slide(index, duration);
 
+    // Access the DOM to find the height of the active slide.
+    if (index === 0) {
+      activeSlide = ReactDOM.findDOMNode(this.refs.performanceSlide);
+      newHeight = activeSlide.clientHeight + 'px';
+    } else {
+      activeSlide = ReactDOM.findDOMNode(this.refs.summarySlide);
+      newHeight = activeSlide.clientHeight + 'px';
+    }
+
     this.setState({
-      activeTab: index
+      activeTab: index,
+      sliderHeight: newHeight
     });
   }
 
   updateActiveTab() {
     let activeSlideIndex = this.state.mySwipe.getPos();
+    let activeSlide;
+    let newHeight;
+
+    // Access the DOM to find the height of the active slide.
+    if (activeSlideIndex === 0) {
+      activeSlide = ReactDOM.findDOMNode(this.refs.performanceSlide);
+      newHeight = activeSlide.clientHeight + 'px';
+    } else {
+      activeSlide = ReactDOM.findDOMNode(this.refs.summarySlide);
+      newHeight = activeSlide.clientHeight + 'px';
+    }
 
     this.setState({
-      activeTab: activeSlideIndex
+      activeTab: activeSlideIndex,
+      sliderHeight: newHeight
     });
   }
 
@@ -53,6 +79,9 @@ class ActivityReport extends React.Component {
 
   render() {
     let report = this.props.report;
+    var sliderStyle = {
+      height: this.state.sliderHeight
+    };
 
     return (
       <div className="activity-report">
@@ -70,6 +99,7 @@ class ActivityReport extends React.Component {
         className=''
         ref={o => this.swipe = o}
         startSlide={0}
+        style={sliderStyle}
         speed={300}
         draggable={true}
         continuous={false}
@@ -79,12 +109,14 @@ class ActivityReport extends React.Component {
         callback={this.updateActiveTab}>
             <SwipeItem
               className=''
+              ref='performanceSlide'
               onClick={this.handleClick}>
               <PlayerPerformance player={this.findPlayer(this.props.characterId, report.entries)} />
               <MedalsList player={this.findPlayer(this.props.characterId, report.entries)} instanceId={this.props.instanceId} />
             </SwipeItem>
             <SwipeItem
               className=''
+              ref='summarySlide'
               onClick={this.handleClick}>
               <div className="report-scoreboard">
                 <Table data={report.entries} 

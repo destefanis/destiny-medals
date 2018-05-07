@@ -1,7 +1,7 @@
 // Activity List and Card Styling
 
 .activity-list {
-  max-width: 620px;
+  max-width: 680px;
   min-height: 200px;
   margin: 2em auto;
   padding: 0 10px;
@@ -17,7 +17,7 @@
   opacity: 0;
 
   @include min($tablet) {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
 
   &:hover {
@@ -30,6 +30,10 @@
   }
 
   &.activity--is-active {
+    .activity-card {
+      border-radius: 10px 10px 0 0;
+    }
+
     .activity-close {
       display: block;
     }
@@ -55,7 +59,7 @@
   cursor: pointer;
 
   @include min($tablet) {
-    height: 280px;
+    height: 320px;
     padding: 0 0 20px;
   }
 
@@ -80,12 +84,12 @@
   }
 
   &::after {
-    background: linear-gradient(rgba($white, 0), rgba($blue, 0.9));
+    background: linear-gradient(hsla(236, 54%, 60%, 0.35), rgba(53,68,95,.6));
     z-index: 1;
     border-radius: 10px;
 
     @include min($tablet) {
-      background: linear-gradient(rgba($white, 0), rgba($blue, 0.6));
+      background: linear-gradient(hsla(236, 54%, 60%, 0.35), rgba(53,68,95,.6));
     }
   }
 }
@@ -120,12 +124,13 @@
   padding-top: 0;
   letter-spacing: .025em;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 500;
 
   @include min($tablet) {
     padding-top: 5px;
     padding-right: 20px;
     padding-left: 5px;
+    font-size: 1.6rem;
   }
 }
 
@@ -208,7 +213,7 @@
   right: 15px;
   display: inline-block;
   z-index: 10;
-  padding: 10px 20px;
+  padding: 10px 25px;
   border-radius: 25px;
   background: $white;
   color: $blue-dark;
@@ -221,7 +226,7 @@
   border: 1px solid $white;
 
   @include min($tablet) {
-    bottom: 20px;
+    bottom: 25px;
     right: 20px;
     font-size: 1.4rem;
   }
