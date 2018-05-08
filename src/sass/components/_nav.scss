@@ -4,6 +4,10 @@
   display: block;
   padding: 15px 0;
   text-align: center;
+
+  a {
+    display: inline-block;
+  }
 }
 
 .h1 {
@@ -14,7 +18,7 @@
   font-size: 1.4rem;
 
   @include min($tablet) {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
 

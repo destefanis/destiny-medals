@@ -84,6 +84,7 @@ class PlayerInfoForm extends React.Component {
 
         // Update the parent state value.
         this.props.onMembershipChange(membershipId);
+        this.props.onViewChange('character-view input-leave');
 
         // Update the router path with querys we can use
         // to re-request the information on reload.

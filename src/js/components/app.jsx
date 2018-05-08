@@ -24,9 +24,11 @@ export class App extends React.Component {
       characterData: [],
       activityHistory: [],
       characterId: '',
+      activeView: 'input-view',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleViewChange = this.handleViewChange.bind(this);
     this.handlePlatformSelect = this.handlePlatformSelect.bind(this);
     this.handleMembershipChange = this.handleMembershipChange.bind(this);
     this.handleCharacterListChange = this.handleCharacterListChange.bind(this);
@@ -38,6 +40,12 @@ export class App extends React.Component {
   handleInputChange(userName) {
     this.setState({
       userName: userName
+    });
+  }
+
+  handleViewChange(activeView) {
+    this.setState({
+      activeView: activeView
     });
   }
 
@@ -74,7 +82,10 @@ export class App extends React.Component {
   render () {
     return (
       <HashRouter>
-          <div>
+          <div className={`app ${this.state.activeView}`}>
+          <div className="input-background"></div>
+          <div className="character-background"></div>
+          <div className="list-background"></div>
           <Navigation />
           <section className="main">
             <Switch>
@@ -84,6 +95,7 @@ export class App extends React.Component {
                   defaultPlatform={this.state.platform}
                   onMembershipChange={this.handleMembershipChange}
                   onHandleInputChange={this.handleInputChange}
+                  onViewChange={this.handleViewChange}
                 /> 
               } />
               <Route exact path="/characters" render={ () => 
@@ -91,7 +103,9 @@ export class App extends React.Component {
                   platform={this.state.platform}
                   onCharacterListChange={this.handleCharacterListChange}
                   membershipId={this.state.membershipId}
-                  onCharacterSelected={this.handleCharacterSelected} /> 
+                  onCharacterSelected={this.handleCharacterSelected}
+                  onViewChange={this.handleViewChange}
+                  /> 
                 } />
               <Route path="/character/activity" render={ () => 
                 <ActivityList 

@@ -108,6 +108,9 @@ class CharacterSelectList extends React.Component {
     let membershipQuery = '&membershipId=' + this.state.membershipId;
     let routerQuery = selectedPlatform + membershipQuery + characterQuery;
 
+    // Update the parent state value.
+    this.props.onViewChange('list-view character-leave');
+
     this.props.history.push({
       pathname: '/character/activity',
       search: routerQuery

@@ -7,13 +7,6 @@
   color: $blue-dark;
 }
 
-// content: '';
-// width: 100%;
-// height: 100vh;
-// opacity: 0.2;
-// /* height: 800px; */
-// position: fixed;
-// background-image: url(https://i.kinja-img.com/gawker-media/image/upload/s--JmBsdEso--/c_scale,fl_progressive,q_80,w_1600/bqbavmphfqo4ultokggl.jpg);
 
 .report-nav {
   padding: 0 10px;
@@ -34,11 +27,11 @@
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.025em;
-  opacity: 1;
+  opacity: 0.6;
   transition: all 200ms ease;
 
   @include min($tablet) {
-    margin-right: 35px;
+    margin-right: 25px;
     padding: 25px 0 10px;
     font-size: 1.4rem;
   }
@@ -49,9 +42,9 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 50px;
+    width: 100%;
     height: 2px;
-    background: $grey;
+    background: rgba($black, 0.6);
     z-index: 1;
   }
 

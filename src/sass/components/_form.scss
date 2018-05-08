@@ -11,10 +11,15 @@
 
   @include min($tablet) {
     width: 360px;
+    height: 600px;
   }
 
   &.view-container--short {
     height: 380px;
+
+    @include min($tablet) {
+      height: 500px;
+    }
   }
 }
 
@@ -52,8 +57,8 @@
   }
 
   &:disabled {
-    opacity: 0.6;
-    cursor: default;
+    opacity: 0.9;
+    cursor: not-allowed;
 
     &:hover {
       background: $blue-dark;
@@ -63,13 +68,11 @@
 
 .button-wrapper {
   margin-top: 3.5em;
-  // padding: 20px;
-  // background: $blue-dark;
 }
 
 .form-input {
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 2rem 1.75rem;
   background: $white;
   color: $blue-dark;
   outline: none;

@@ -12,9 +12,6 @@ class PlayerPerformance extends React.Component {
 
     return (
       <div className="report-performance">
-        <h2 className="performance-title">
-          {player.player.destinyUserInfo.displayName}s Performance
-        </h2>
         <div className="metrics-wrapper">
           <div className="performance-metric">
             <h6 className="metric-title">Opp. Defeated</h6>
