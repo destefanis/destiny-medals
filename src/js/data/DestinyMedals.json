@@ -2061,6 +2061,7 @@
       "statName":"###medal_strings.pvp_control_capture_all_zones###",
       "statDescription":"###medal_descriptions.Medals_pvp_medal_control_capture_all_zones###",
       "unitType":1,
+      "iconImage":"/common/destiny2_content/icons/icon_m196ce16baaef55ff6ee899a4070248ce.png",
       "unitLabel":"",
       "weight":1,
       "medalTierIdentifier":"PVP_TIER_3",
