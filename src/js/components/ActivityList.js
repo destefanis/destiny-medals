@@ -50,6 +50,7 @@ class ActivityList extends React.Component {
   // Find the name of the activity/map within our definition json.
   findActivityData(referenceId) {
     let activityDefinition = PvpActivityDefinition[referenceId];
+
     return (activityDefinition);
   }
 
@@ -59,6 +60,7 @@ class ActivityList extends React.Component {
 
     // Reference the mode to find the mode's hash number.
     let playlistItem = directoryActivity.playlistItems.find(item => item.directActivityModeType === modeNumber);
+
 
     // The mode is always the first in this array.
     let mode = playlistItem.activityModeHashes[0];
@@ -127,7 +129,7 @@ class ActivityList extends React.Component {
   }
 
   render() {
-    let listSize = 30;
+    let listSize = 20;
     let activityHistory = this.state.activityHistoryData;
     let merged = [].concat.apply([], activityHistory);
     let activities = null;

@@ -54,9 +54,10 @@ class ActivityCard extends React.Component {
   render() {
     const isActive = this.state.isActive;
     const activityDefinition = this.props.activityDefinition;
+    console.log(activityDefinition);
     const modeData = this.props.modeData;
     const instanceId = this.props.instanceId;
-    const activityIcon = 'https://www.bungie.net/' + modeData.displayProperties.icon; 
+    const activityIcon = 'https://www.bungie.net/' + modeData.displayProperties.icon;
 
     const divStyle = {
       backgroundImage: 'url("https://www.bungie.net' + this.props.activityDefinition.pgcrImage + '")'
