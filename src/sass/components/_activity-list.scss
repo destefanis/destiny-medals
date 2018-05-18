@@ -10,7 +10,7 @@
 
 .activity {
   margin-bottom: 0.75em;
-  box-shadow: 0 6px 12px rgba($black, 0.24);
+  box-shadow: 0 6px 12px rgba($black, 0.3);
   border-radius: 10px;
   transform: translateY(50px);
   transition: box-shadow 250ms ease;
@@ -21,7 +21,7 @@
   }
 
   &:hover {
-    box-shadow: 0 8px 18px rgba($black, 0.20);
+    box-shadow: 0 8px 18px rgba($black, 0.24);
 
     .card__toggle-button {
       background: $blue-dark;
