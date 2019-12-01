@@ -48,7 +48,7 @@ class PlayerInfoForm extends React.Component {
       this.setState({placeholderText: "Your Gamertag"});
     }
     else {
-      this.setState({placeholderText: "YourName#1337"});
+      this.setState({placeholderText: "Your Steam Name"});
     }
   }
 
@@ -71,6 +71,8 @@ class PlayerInfoForm extends React.Component {
     let playerName = encodeURIComponent(this.state.value);
     let playerPlatform = this.state.platform;
     let endpoint = host + 'SearchDestinyPlayer/' + playerPlatform + '/' + playerName + '/';
+
+    console.log(endpoint);
 
     let request = new Request(endpoint, requestHeader);
     let membershipId;
