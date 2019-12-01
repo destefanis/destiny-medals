@@ -5,7 +5,7 @@ class PlatformSelect extends React.Component {
     super(props);
 
     this.state = {
-      radioChecked: "4",
+      radioChecked: "3",
     }
 
     this.handleRadioChange = this.handleRadioChange.bind(this);
@@ -24,7 +24,7 @@ class PlatformSelect extends React.Component {
         </label>
         <div className="platform-select__buttons">
           <div className="radio-wrapper">
-            <input type="radio" id="platform-1" name="platform" value="4" checked={this.state.radioChecked === '4'} onChange={this.handleRadioChange} />
+            <input type="radio" id="platform-1" name="platform" value="3" checked={this.state.radioChecked === '4'} onChange={this.handleRadioChange} />
             <label className="radio-label" htmlFor="platform-1">PC</label>
           </div>
           <div className="radio-wrapper">

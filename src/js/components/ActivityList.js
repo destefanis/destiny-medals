@@ -59,14 +59,13 @@ class ActivityList extends React.Component {
     let directoryActivity = PvpActivityDefinition[directorActivityHash];
 
     // Reference the mode to find the mode's hash number.
-    let playlistItem = directoryActivity.playlistItems.find(item => item.directActivityModeType === modeNumber);
-
+    // let playlistItem = directoryActivity.playlistItems.find(item => item.directActivityModeType === modeNumber);
 
     // The mode is always the first in this array.
-    let mode = playlistItem.activityModeHashes[0];
-    let modeData = ActivityModeDefinition[mode];
+    // let mode = playlistItem.activityModeHashes[0];
+    // let modeData = ActivityModeDefinition[mode];
 
-    return (modeData);
+    return (directoryActivity);
   }
 
   parseDate(date) {
