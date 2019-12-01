@@ -21,11 +21,12 @@
   }
 
   &:hover {
-    box-shadow: 0 8px 18px rgba($black, 0.24);
+    box-shadow: 0 9px 14px rgba($black, 0.4);
 
     .card__toggle-button {
-      background: $blue-dark;
-      color: $white;
+      background: $white;
+      // color: $white;
+      box-shadow: 0 6px 12px rgba($black, 0.3);
     }
   }
 
@@ -46,7 +47,7 @@
   justify-content: flex-end;
   position: relative;
   list-style: none;
-  height: 200px;
+  height: 280px;
   width: 100%;
   padding: 0 0 10px;
   border-radius: 10px;
@@ -123,14 +124,13 @@
   padding-left: 0;
   padding-top: 0;
   letter-spacing: .025em;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
 
   @include min($tablet) {
     padding-top: 5px;
     padding-right: 20px;
     padding-left: 5px;
-    font-size: 1.6rem;
   }
 }
 
@@ -168,6 +168,7 @@
   color: $white;
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 5px;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 900;
@@ -177,6 +178,7 @@
   @include min($tablet) {
     font-size: 3.4rem;
     width: 50%;
+    margin-left: 0;
   }
 }
 
@@ -202,9 +204,16 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   background: $white;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 10px;
   padding: 4px 9px 3px 10px;
   line-height: 1.2;
+
+  @include min($tablet) {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
 }
 
 .card__toggle-button {
@@ -218,7 +227,7 @@
   background: $white;
   color: $blue-dark;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 200ms ease;
   transition-property: background, color, box-shadow;

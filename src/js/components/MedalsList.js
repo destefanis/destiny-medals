@@ -59,12 +59,12 @@ class MedalsList extends React.Component {
     return (
       <div className="medals">
         <header className="score-board__team">
-          <h3 className="team-name">Medals Earned</h3>
-          <span className="score-divider">
+          <h6 className="metric-title">Medals Earned</h6>
+          {/* <span className="score-divider">
           </span>
           <span className="score-board__total">
             {player.extended.values.allMedalsEarned.basic.displayValue}
-          </span>
+          </span> */}
         </header>
         <div className="medals-earned">
           {medal}

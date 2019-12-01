@@ -48,6 +48,10 @@
     z-index: 1;
   }
 
+  &::after {
+    opacity: 0;
+  }
+
   &::before {
     z-index: 10;
     transform: scaleX(0);
@@ -59,6 +63,10 @@
   &.is-active {
     opacity: 1;
     color: $aqua-dark;
+
+    &::after {
+      opacity: 1;
+    }
 
     &::before {
       transform: scaleX(1);

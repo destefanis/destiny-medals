@@ -1,9 +1,16 @@
 // Medals component
 
 .medals {
-  padding: 10px 20px;
+  margin: 0 10px 10px;
+  padding: 10px 10px 0;
   background: $grey;
   text-align: left;
+  border-radius: 5px;
+
+  @include min($tablet) {
+    margin: 0 20px 20px;
+    padding: 10px 20px 0;
+  }
 }
 
 .medals-earned {
